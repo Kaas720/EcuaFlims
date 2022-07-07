@@ -14,7 +14,7 @@ export class AppComponent {
     {img: "https://as01.epimg.net/meristation/imagenes/2018/05/07/noticia/1525671060_782091_1531814346_portada_normal.jpg"},
     {img: "https://media.tycsports.com/files/2020/09/05/116790/marvel-avengers_862x485.jpg"}
   ];
-  slideConfig = {"slidesToShow": 2, "slidesToScroll": 1, "infinite": true,"centerMode":true};
+  slideConfig = {"slidesToShow": 1, "slidesToScroll": 1, "infinite": true,"nextArrow":false,"prevArrow":false};
   
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
