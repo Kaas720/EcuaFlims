@@ -4,3 +4,25 @@
 <div>loserrr</div>
 <div>loserrrsito</div>
 <div>HAII</div>
+<div>
+    <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig" >
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <img src="{{ slide.img }}" alt="" width="100%">
+        </div>
+    </ngx-slick-carousel>
+    <button (click)="next()">Next</button>
+    <button (click)="prev() ">prev</button>
+    <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+    <button (click)="slickModal.unslick()">unslick</button>
+    <script>
+        $('#myCarouselCustom').carousel();
+        $("#prevBtn").click(function () {
+            $("#myCarouselCustom").carousel("prev");
+        });
+        $("#nextBtn").click(function () {
+            $("#myCarouselCustom").carousel("next");
+        });
+    </script>
+</div>
