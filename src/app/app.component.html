@@ -54,7 +54,7 @@
         #slickModal="slick-carousel" 
         [config]="slideConfig" >
         <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-          <img src="{{ slide.img }}" alt="" width="50%" height="500px">
+          <img src="{{ slide.img }}" alt="" width="100%" height="500px">
         </div>
     </ngx-slick-carousel>
     <button (click)="next()" style="position: relative; top:-500px; width:5%;height:500px; z-index: 1; float: right;">Next</button>
@@ -82,29 +82,36 @@
     <!-- Button trigger modal -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Spiderman</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div style="background-color:rgba(0,0,0,0.85)"  class="modal-content">
       <div class="modal-body">
-        ...
+        <button (click)="cerrarVideo('VideoSpiderman')" style="color: white;background-color: transparent; float: right; border: none; margin-bottom: 10px;" type="button" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg></button>
+        <video id="VideoSpiderman" class="video-pause" controls width="100%">
+          <source src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/SpiderMan.mp4?alt=media&token=7691ac75-f28a-4428-b113-16e1a4c5c3de" type="video/mp4" />
+          <source src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/SpiderMan.mp4?alt=media&token=7691ac75-f28a-4428-b113-16e1a4c5c3de" type="video/mp4" />
+          Navegador no copatible
+        </video>
     </div>
   </div>
 </div>
 </div>
 <div class="modal fade" id="Thor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">THOR</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div style="background-color:rgba(0,0,0,0.85)"  class="modal-content">
       <div class="modal-body">
-        ...
+        <button  (click)="cerrarVideo('videoBuzzLigher')" type="button" data-bs-dismiss="modal" style="color: white;background-color: transparent; float: right; border: none; margin-bottom: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg></button>
+        <video id="videoBuzzLigher" class="video-pause"  controls width="100%">
+          <source   src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/SpiderMan.mp4?alt=media&token=7691ac75-f28a-4428-b113-16e1a4c5c3de" type="video/mp4" />
+          <source src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/SpiderMan.mp4?alt=media&token=7691ac75-f28a-4428-b113-16e1a4c5c3de" type="video/mp4" />
+          Navegador no copatible
+        </video>
     </div>
   </div>
 </div>
 </div>
-<!-- Modal -->

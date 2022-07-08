@@ -7,6 +7,7 @@ import { SlickCarouselComponent } from 'ngx-slick-carousel';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  constructor(private ElByClassName: ElementRef) {}
   title = 'ProyectoEcuaFlims';
   slides = [
     {img: "https://i.blogs.es/1aad84/marvel/1366_521.jpeg"},
@@ -19,11 +20,12 @@ export class AppComponent implements OnInit {
     {img: "https://media.tycsports.com/files/2020/09/05/116790/marvel-avengers_862x485.jpg",p:"LOLa",model:"#Thor"}
   ];
   slideConfig = {"slidesToShow": 1, "slidesToScroll": 1, "infinite": true,"nextArrow":false,"prevArrow":false};
-  
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
   @ViewChild('videos')
   divuser!: ElementRef;
+  @ViewChild('video1')
+  video1!: ElementRef;
   ngOnInit(): void {
   setTimeout(() => {
     console.log(this.divuser.nativeElement.innerText + 'LOL');
@@ -39,5 +41,13 @@ export class AppComponent implements OnInit {
 
   prev() {
     this.slickModal.slickPrev();
+  }
+  cerrarVideo(id_entrada: string){
+    let x = <HTMLVideoElement> document.getElementById(id_entrada);
+    if(x!=null)
+    {
+      x.pause();
+      x.currentTime = 0;
+    }
   }
 }
