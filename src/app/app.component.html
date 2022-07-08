@@ -54,9 +54,57 @@
         #slickModal="slick-carousel" 
         [config]="slideConfig" >
         <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-        <img src="{{ slide.img }}" alt="" width="100%" height="500px">
+          <img src="{{ slide.img }}" alt="" width="50%" height="500px">
         </div>
     </ngx-slick-carousel>
     <button (click)="next()" style="position: relative; top:-500px; width:5%;height:500px; z-index: 1; float: right;">Next</button>
 </div>
 <button type="button" class="btn btn-primary">Primary</button>
+<div data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
+  <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig" >
+        <div ngxSlickItem *ngFor="let slide of imgFondo" class="slide">
+          <div style="background-color: green; width: 100%;">
+            <div style="background-color: lightcoral; width: 75%;">
+              <a  data-bs-toggle="modal" [attr.data-bs-target] ="slide.model">
+                <img src="https://hbomax-images.warnermediacdn.com/2022-03/play-icon.png" alt="">
+              </a>
+              <img src="{{ slide.img }}" alt="" width="50%">
+              <div class="modal" id="venata1">
+                <p>MARCOSDB</p>>
+              </div>
+            </div>
+            <p>{{slide.model}}</p>
+          </div>    
+        </div>
+    </ngx-slick-carousel>
+    <!-- Button trigger modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Spiderman</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+    </div>
+  </div>
+</div>
+</div>
+<div class="modal fade" id="Thor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">THOR</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+    </div>
+  </div>
+</div>
+</div>
+<!-- Modal -->

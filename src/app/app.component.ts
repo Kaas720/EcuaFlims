@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
     {img: "https://as01.epimg.net/meristation/imagenes/2018/05/07/noticia/1525671060_782091_1531814346_portada_normal.jpg"},
     {img: "https://media.tycsports.com/files/2020/09/05/116790/marvel-avengers_862x485.jpg"}
   ];
+  imgFondo = [
+    {img: "https://pbs.twimg.com/media/FNU7GhdX0AIneOt.jpg:large",p:"LOL",model:"#exampleModal"},
+    {img: "https://media.tycsports.com/files/2020/09/05/116790/marvel-avengers_862x485.jpg",p:"LOLa",model:"#Thor"}
+  ];
   slideConfig = {"slidesToShow": 1, "slidesToScroll": 1, "infinite": true,"nextArrow":false,"prevArrow":false};
   
   @ViewChild('slickModal')
@@ -21,8 +25,6 @@ export class AppComponent implements OnInit {
   @ViewChild('videos')
   divuser!: ElementRef;
   ngOnInit(): void {
-  /*;
-  /*asTitle.style.display = "none";*/
   setTimeout(() => {
     console.log(this.divuser.nativeElement.innerText + 'LOL');
     const Video = this.divuser.nativeElement
