@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 @Component({
@@ -6,7 +6,7 @@ import { SlickCarouselComponent } from 'ngx-slick-carousel';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'ProyectoEcuaFlims';
   slides = [
     {img: "https://i.blogs.es/1aad84/marvel/1366_521.jpeg"},
@@ -18,7 +18,19 @@ export class AppComponent {
   
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
-
+  @ViewChild('videos')
+  divuser!: ElementRef;
+  ngOnInit(): void {
+  /*;
+  /*asTitle.style.display = "none";*/
+  setTimeout(() => {
+    console.log(this.divuser.nativeElement.innerText + 'LOL');
+    const Video = this.divuser.nativeElement
+    Video.muted = true;
+    Video.pause();
+    Video.play();
+  }, 10);
+  } 
   next() {
     this.slickModal.slickNext();
   }
