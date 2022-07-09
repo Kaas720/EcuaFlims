@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     {img: "https://media.tycsports.com/files/2020/09/05/116790/marvel-avengers_862x485.jpg"}
   ];
   imgFondo = [
-    {img: "https://pbs.twimg.com/media/FNU7GhdX0AIneOt.jpg:large",p:"LOL",model:"#exampleModal"},
+    {img: "https://pbs.twimg.com/media/FNU7GhdX0AIneOt.jpg:large",p:"SPIDER-MAN NO HAY HOME ",model:"#exampleModal"},
     {img: "https://media.tycsports.com/files/2020/09/05/116790/marvel-avengers_862x485.jpg",p:"LOLa",model:"#Thor"}
   ];
   slideConfig = {"slidesToShow": 1, "slidesToScroll": 1, "infinite": true,"nextArrow":false,"prevArrow":false};
