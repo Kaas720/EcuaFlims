@@ -67,7 +67,7 @@
         <div ngxSlickItem *ngFor="let slide of imgFondo" class="slide">
           <div style="background-color: green; width: 100%;">
             <div style="background-color: lightcoral; width: 75%;">
-              <a  data-bs-toggle="modal" [attr.data-bs-target] ="slide.model">
+              <a  data-bs-toggle="modal" [attr.data-bs-target] ="slide.model" >
                 <img src="https://hbomax-images.warnermediacdn.com/2022-03/play-icon.png" alt="">
               </a>
               <img src="{{ slide.img }}" alt="" width="50%">
@@ -81,7 +81,7 @@
     </ngx-slick-carousel>
     <!-- Button trigger modal -->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div style="background-color:rgba(0,0,0,0.85)"  class="modal-content">
       <div class="modal-body">
@@ -98,7 +98,7 @@
   </div>
 </div>
 </div>
-<div class="modal fade" id="Thor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Thor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div style="background-color:rgba(0,0,0,0.85)"  class="modal-content">
       <div class="modal-body">
