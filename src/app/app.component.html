@@ -48,9 +48,9 @@
   <h4 style="margin:0; padding-top:50px; padding-bottom: 50px;color: white; text-align: center; background: linear-gradient(0,rgba(62, 17, 96, 0.5),rgba(3, 3, 40,1));">Estrenos que se convertirán en nuevos favoritos.</h4>
 <div  style="Position:relative; top:0px;width: 100%; margin: 0px; background: linear-gradient(0, rgb(3, 3, 40),rgba(62, 17, 96, 0.5));">
   
-  <div class="container" style="background-color: blue;">
+  <div class="container" style="background-color: transparent;">
     <ngx-slick-carousel class="carousel"
-          #slickModal="slick-carousel" 
+          #slickModalPeliculasTrailer="slick-carousel" 
           [config]="slideConfig" >
           <div ngxSlickItem *ngFor="let slide of imgFondo" class="slide">
                 <div class="row justify-content-center justify-content-md-start">
@@ -65,8 +65,7 @@
                         <img  src="https://hbomax-images.warnermediacdn.com/2022-03/play-icon.png" alt="">
                       </button>
                     </div>
-                  </div>
-                  
+                  </div>        
                 </div>
           </div>
       </ngx-slick-carousel>
@@ -74,14 +73,14 @@
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
   <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div style="background-color:rgba(0,0,0,0.85)"  class="modal-content">
+    <div style="background-color:rgba(0,0,0,0.95)"  class="modal-content">
       <div class="modal-body">
+        <h4 style="display:inline-block ; color: white;">Spider-Man No Hay Home | Tráiler Oficial |</h4>
         <button (click)="cerrarVideo('VideoSpiderman')" style="color: white;background-color: transparent; float: right; border: none; margin-bottom: 10px;" type="button" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
         </svg></button>
         <video id="VideoSpiderman" class="video-pause" controls width="100%">
-          <source src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/SpiderMan.mp4?alt=media&token=7691ac75-f28a-4428-b113-16e1a4c5c3de" type="video/mp4" />
           <source src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/SpiderMan.mp4?alt=media&token=7691ac75-f28a-4428-b113-16e1a4c5c3de" type="video/mp4" />
           Navegador no copatible
         </video>
@@ -91,15 +90,32 @@
 </div>
 <div class="modal fade" id="Thor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
   <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div style="background-color:rgba(0,0,0,0.85)"  class="modal-content">
+    <div style="background-color:rgba(0, 0, 0, 0.95)"  class="modal-content">
       <div class="modal-body">
+        <h4 style="display:inline-block ; color: white;">Lightyear | Tráiler Oficial |</h4>
         <button  (click)="cerrarVideo('videoBuzzLigher')" type="button" data-bs-dismiss="modal" style="color: white;background-color: transparent; float: right; border: none; margin-bottom: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
         </svg></button>
         <video id="videoBuzzLigher" class="video-pause"  controls width="100%">
-          <source   src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/SpiderMan.mp4?alt=media&token=7691ac75-f28a-4428-b113-16e1a4c5c3de" type="video/mp4" />
-          <source src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/SpiderMan.mp4?alt=media&token=7691ac75-f28a-4428-b113-16e1a4c5c3de" type="video/mp4" />
+          <source   src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/x2mate.com-Lightyear%20_%20Tr%C3%A1iler%20Oficial%20_%20Doblado-(1080p).mp4?alt=media&token=20722540-50c7-4034-917f-ee8581270cfd" type="video/mp4" />
+          Navegador no copatible
+        </video>
+    </div>
+  </div>
+</div>
+</div>
+<div class="modal fade" id="Jurrasic" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div style="background-color:rgba(0, 0, 0, 0.95)"  class="modal-content">
+      <div class="modal-body">
+        <h4 style="display:inline-block ; color: white;">Jurassic World Dominion | Tráiler Oficial |</h4>
+        <button  (click)="cerrarVideo('videoJurrasic')" type="button" data-bs-dismiss="modal" style="color: white;background-color: transparent; float: right; border: none; margin-bottom: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg></button>
+        <video id="videoJurrasic" class="video-pause"  controls width="100%">
+          <source   src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/x2mate.com-JURASSIC%20WORLD%203%20DOMINION%20Tr%C3%A1iler%20Espa%C3%B1ol%20(2022)-(1080p).mp4?alt=media&token=69e8dd54-32f8-437a-866a-8d41025879f1" type="video/mp4" />
           Navegador no copatible
         </video>
     </div>
@@ -110,7 +126,7 @@
   <button (click)="prev() " style="position: absolute; width:5%;height:500px; z-index: 1;">prev</button>
   <ngx-slick-carousel class="carousel" 
       #slickModal="slick-carousel" 
-      [config]="slideConfig" >
+      [config]="slideConfigImage" >
       <div ngxSlickItem *ngFor="let slide of slides" class="slide">
         <img src="{{ slide.img }}" alt="" width="100%" height="500px">
       </div>
