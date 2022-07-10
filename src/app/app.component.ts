@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     {img: "https://archivos-cms.cinecolombia.com/images/_aliases/exhibition_embed/6/4/8/5/25846-1-esl-CO/534f53a439da-imagen_trailer_1000x510.jpg",p:"LIGHTYEAR",model:"#Thor"},
     {img: "https://images6.alphacoders.com/123/1239922.jpg",p:"JURASSIC WORLD 3 DOMINION",model:"#Jurrasic"}
   ];
-  slideConfig = {"slidesToShow": 1,"nextArrow":false,"prevArrow":false,"swipeToSlide":true,"infinite":false,"accessibility":false,"speed":500,"draggable": false};
+  slideConfig = {"slidesToShow": 1,"nextArrow":false,"prevArrow":false,"swipeToSlide":true,"infinite":false,"accessibility":false,"speed":500,"draggable": false,touchMove:"false"};
   slideConfigImage = {"slidesToShow": 2,"nextArrow":false,"prevArrow":false,"accessibility":false};
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
