@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import {LazyLoadService} from 'ngx-slickjs';
+import { reduce } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +9,22 @@ import { SlickCarouselComponent } from 'ngx-slick-carousel';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private ElByClassName: ElementRef) {}
+  constructor(private ElByClassName: ElementRef,private lazyLoadService: LazyLoadService) {}
   title = 'ProyectoEcuaFlims';
   NumeroPelicula = 1;
   slides = [
-    {img: "https://i.blogs.es/1aad84/marvel/1366_521.jpeg",active:"active"},
-    {img: "https://as01.epimg.net/meristation/imagenes/2021/03/12/reportajes/1615546576_319724_1615546812_noticia_normal.jpg",active:"false"},
-    {img: "https://as01.epimg.net/meristation/imagenes/2018/05/07/noticia/1525671060_782091_1531814346_portada_normal.jpg",active:"false"},
-    {img: "https://media.tycsports.com/files/2020/09/05/116790/marvel-avengers_862x485.jpg",active:"false"}
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2FUncharted.png?alt=media&token=c31d3beb-9f66-4507-aaca-bbfb50e20718"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2Fel%20mundo%20de%20los%20perdidos.png?alt=media&token=9f5322f3-2da6-46d6-8bb0-15d24f9c848e"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2Fethernals.png?alt=media&token=79c087fd-d790-401c-a730-2dbffc166876"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2FProyectoAdan.png?alt=media&token=f13b110f-d8bc-4748-8944-a3667cf74c3c"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2FTe%20amare%20por%20siempre.png?alt=media&token=4436981a-d0fc-4b55-afcb-94ce7378c738"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2F2067.png?alt=media&token=bd9c7a37-1796-4f7c-9fb8-76a9db924a90"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2FEnd%20game.png?alt=media&token=7ecb3dd1-3023-4a8c-a0d1-b682abc4598a"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2Fvenom.png?alt=media&token=7d0c632c-f0ca-42f0-b1aa-1ba0723f9f9b"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2FMORBIUS.png?alt=media&token=46be3a97-fbbc-4739-a8ef-b16b3740d78d"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2FShang%20chi.png?alt=media&token=39f92f58-95b9-4908-b657-d6ebcbae011d"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2FyourName.png?alt=media&token=21fb01d8-8606-43ad-a44a-a22c2d43b073"},
+    {img: "https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Peliculas%2FSonic%202.png?alt=media&token=0f0bbe8b-419d-4f31-9b3a-eb3e907f89ef"}
   ];
   imgFondo = [
     {actor1:"Tom Holland",actor2:"Tobey Maguire",actor3:"Andrew Garfield",img: "https://pbs.twimg.com/media/FNU7GhdX0AIneOt.jpg:large",p:"SPIDER-MAN NO HAY HOME ",model:"#exampleModal",sipnosis:"Tras descubrirse la identidad secreta de Peter Parker como Spider-Man, la vida del joven se vuelve una locura. Peter decide pedirle ayuda al Doctor Extraño para recuperar su vida. Pero algo sale mal y provoca una fractura en el multiverso.",actor1Img:"https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Actores%20PNG%2FTom%20Holand2.png?alt=media&token=01455bb4-37f3-4eec-9a48-d56adf921f57",actorImg2:"https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Actores%20PNG%2FTobeyMaguirre.png?alt=media&token=6e9c460b-17a1-4980-877f-6566c5afbfb2",actorImg3:"https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Actores%20PNG%2FAndrew%20Garfield.png?alt=media&token=11672aa3-2cf9-4d9a-8331-0659dde3c772"},
@@ -24,7 +34,24 @@ export class AppComponent implements OnInit {
     {actor1:"Benedict Cumberbatch",actor2:"Elizabeth Olsen",actor3:"Benedict Wong",img: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1C983C9E4FF6B2DDA6BD3272948CE3957EC8C658C5373D494052660FFD6CC307/scale?width=1200&aspectRatio=1.78&format=jpeg",p:"DOCTOR STRANGE 2",model:"#DoctoStrange",sipnosis:"En esta nueva aventura, el Doctor Strange va a poner a prueba los límites de sus poderes y esto le llevará a explorar una nueva dimensión de sus capacidades. Tras haber fallado su hechizo, cuando trataba de ayudar a Spider-Man, debera enmendar su error.",actor1Img:"https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Actores%20PNG%2FBenedict%20Cumberbatch.png?alt=media&token=50cef29e-a87c-4ce4-9854-375700ea665b",actorImg2:"https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Actores%20PNG%2FElizabeth%20Olsen.png?alt=media&token=57edf7d3-33d9-4ae4-82ef-5631e8b8e674",actorImg3:"https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Actores%20PNG%2FBenedict%20Wong.png?alt=media&token=e28afb6b-ceae-4f6f-a8cb-c36ddacb91b1"}
   ];
   slideConfig = {"slidesToShow": 1,"nextArrow":false,"prevArrow":false,"swipeToSlide":true,"infinite":false,"accessibility":false,"swipe":false};
-  slideConfigImage = {"slidesToShow": 1,"nextArrow":false,"prevArrow":false,"accessibility":false};
+  slideConfigImage = {"slidesToShow": 3,"nextArrow":false,"prevArrow":false,"accessibility":false,"autoplay": true,
+  "autoplaySpeed": 3000,"responsive": [
+    {
+      breakpoint: 600,
+      settings: {  
+       slidesToShow: 1,
+       centerMode:false
+      }  
+    },
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2,
+        centerMode:false
+      }
+    }
+  ]
+  };
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
   @ViewChild('slickModalPeliculasTrailer')
