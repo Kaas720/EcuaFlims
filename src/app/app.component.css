@@ -103,6 +103,11 @@
   object-fit: cover;
 
 }
+#tamanoDeDivPreguntasFrecuentes{
+    width: 80%;
+    margin: 0;
+    padding: 0px;
+}
 .slider-nav .slick-list .slick-track {
     transform: translate3d(0px, 0px, 0px) !important;
 }
@@ -112,5 +117,8 @@
   @media (max-width: 600px) {
     #ImagenPeliculasPromocion {
       width: 90%;
+    }
+    #tamanoDeDivPreguntasFrecuentes{
+        width: 100%;
     }
   }
