@@ -108,6 +108,11 @@
     margin: 0;
     padding: 0px;
 }
+#tamanoDivRespuestas{
+    width: 80%;
+    margin: 0;
+    padding: 0px;
+}
 .slider-nav .slick-list .slick-track {
     transform: translate3d(0px, 0px, 0px) !important;
 }
@@ -119,6 +124,9 @@
       width: 90%;
     }
     #tamanoDeDivPreguntasFrecuentes{
+        width: 100%;
+    }
+    #tamanoDivRespuestas{
         width: 100%;
     }
   }
