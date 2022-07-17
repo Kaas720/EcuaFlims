@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { LazyLoadService } from 'ngx-slickjs';
 
@@ -8,7 +9,7 @@ import { LazyLoadService } from 'ngx-slickjs';
   styleUrls: ['./pagina-inicio.component.css']
 })
 export class PaginaInicioComponent implements OnInit  {
-  constructor(private ElByClassName: ElementRef,private lazyLoadService: LazyLoadService) {}
+  constructor(private ElByClassName: ElementRef,private lazyLoadService: LazyLoadService,private router: Router) {}
   title = 'ProyectoEcuaFlims';
   NumeroPelicula = 1;
   slides = [
@@ -245,5 +246,8 @@ export class PaginaInicioComponent implements OnInit  {
     if(DivOcultoLet1!=null && DivOcultoLet2!=null && DivOcultoLet3!=null && DivOcultoLet4!=null ){
 
     }
+  }
+  CrearCuente(){
+    this.router.navigate(['/CrearCuenta']);
   }
 }
