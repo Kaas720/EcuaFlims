@@ -1,0 +1,29 @@
+#DivPrincipalFormaPago {
+    background-image: url("../../assets/CrearCuenta.jpg");
+    flex-grow: 1;
+    object-fit: cover;
+    background-position: center;
+}
+
+.contenido {
+    opacity: 1;
+}
+
+h4 {
+    color: aliceblue;
+    font-weight: lighter;
+}
+
+li {
+    font-weight: bold;
+}
+
+#botonPagar {
+    background: linear-gradient(to left, rgb(116, 9, 121), rgb(185, 8, 246), rgb(91, 28, 230));
+    border-color: rgb(206, 198, 214);
+    border-radius: 15px;
+}
+.cancelar {
+background-color: rgb(157, 63, 246);
+width: 75%;
+}
