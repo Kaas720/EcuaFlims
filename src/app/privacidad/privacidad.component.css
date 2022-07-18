@@ -1,0 +1,12 @@
+#divPrincipal{
+    background-size: cover;
+    background-position: center center;
+    background-image: url(https://hbomax-images.warnermediacdn.com/2021-04/privacy-center-dt-1024-2x.png?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=2048);
+}
+@media (max-width: 575px){
+    #divPrincipal{
+        background-size: cover;
+        background-position: center center;
+        background-image: url(https://hbomax-images.warnermediacdn.com/2021-04/privacy-center-ph-320-2x.png?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=575);
+    } 
+}

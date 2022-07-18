@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormaDePagoComponent } from './forma-de-pago/forma-de-pago.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
     FooterComponent,
     CrearCuentaComponent,
     FormaDePagoComponent,
-    PaginaInicioComponent
+    PaginaInicioComponent,
+    PrivacidadComponent
   ],
   imports: [
     BrowserModule,
