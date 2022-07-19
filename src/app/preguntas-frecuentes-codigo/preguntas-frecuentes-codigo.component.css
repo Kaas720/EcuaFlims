@@ -1,0 +1,18 @@
+#tamanoDeDivPreguntasFrecuentes{
+    width: 80%;
+    margin: 0;
+    padding: 0px;
+}
+#tamanoDivRespuestas{
+    width: 80%;
+    margin: 0;
+    padding: 0px;
+}
+@media (max-width: 600px) {
+    #tamanoDeDivPreguntasFrecuentes{
+        width: 100%;
+    }
+    #tamanoDivRespuestas{
+        width: 100%;
+    }
+  }
