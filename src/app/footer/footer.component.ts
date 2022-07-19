@@ -15,4 +15,13 @@ export class FooterComponent implements OnInit {
   PrivacidadClick(){
     this.router.navigate(['/Privacidad']);
   }
+  PreguntasFrecuentes(){
+    this.router.navigate(['/PreguntasFrecuentes']);
+  }
+  PruebaVelocidad(){
+    this.router.navigate(['/PruebaVelocidad']);
+  }
+  TerminoDeUso(){
+    this.router.navigate(['/TerminoDeUso']);
+  }
 }

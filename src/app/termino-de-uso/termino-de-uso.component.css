@@ -1,0 +1,37 @@
+#divPrincipal{
+    background-size: cover;
+    background-position: center 1px;
+    background-image: url("../../assets/Avengersbanner6.png");
+}
+.TitulosTerminoUso{
+    color:rgb(222, 96, 118);
+    font-size: 15px;
+    list-style: decimal;
+}
+.ParrafosTerminoUso{
+    color: rgba(231, 225, 225, 0.7);
+    font-size: 13px;
+    text-align: justify;
+    list-style: none;
+}
+#TituloPrincipal{
+    width: 60%;
+    text-align: center;
+    font-size: 34px;
+}
+@media (max-width: 1000px){
+    #TituloPrincipal{
+        font-size: 28px;    
+    }
+}
+@media (max-width: 800px){
+    #divPrincipal{
+        background-size: cover;
+        background-position: center center;
+        background-image: url("../../assets/AvengersbannerParte22.png");
+    } 
+    #TituloPrincipal{
+        font-size: 26px;
+        width: 100%;
+    }
+}

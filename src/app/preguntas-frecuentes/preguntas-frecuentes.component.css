@@ -1,0 +1,10 @@
+#divPrincipal{
+    background-size: cover;
+    background-position: center 1px;
+    background-image: url("../../assets/Avengersbanner6.png");
+}
+#TituloPrincipal{
+    width: 60%;
+    text-align: center;
+    font-size: 40px;
+}

@@ -1,6 +1,9 @@
 .estiloTamano{
     width: 70%;
 }
+.Cursor{
+    cursor: pointer;
+}
 #OpcionesUl, #OpcionesUlRedesSociales{
     justify-content: space-between;
     display: flex;
