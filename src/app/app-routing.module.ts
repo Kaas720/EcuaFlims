@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactosComponent } from './contactos/contactos.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'Privacidad',component:PrivacidadComponent},
   {path:'TerminoDeUso',component:TerminoDeUsoComponent},
   {path:'PruebaVelocidad',component:PruebaVelocidadComponent},
-  {path:'PreguntasFrecuentes',component:PreguntasFrecuentesComponent}
+  {path:'PreguntasFrecuentes',component:PreguntasFrecuentesComponent},
+  {path:'Contactanos',component:ContactosComponent}
 ];
 
 @NgModule({

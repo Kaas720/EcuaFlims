@@ -17,6 +17,7 @@ import { TerminoDeUsoComponent } from './termino-de-uso/termino-de-uso.component
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { PreguntasFrecuentesCodigoComponent } from './preguntas-frecuentes-codigo/preguntas-frecuentes-codigo.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
+import { ContactosComponent } from './contactos/contactos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-f
     TerminoDeUsoComponent,
     PrivacidadComponent,
     PreguntasFrecuentesCodigoComponent,
-    PreguntasFrecuentesComponent
+    PreguntasFrecuentesComponent,
+    ContactosComponent
   ],
   imports: [
     BrowserModule,
