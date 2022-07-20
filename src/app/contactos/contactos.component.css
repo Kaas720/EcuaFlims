@@ -1,0 +1,55 @@
+
+.mapa-responsive {
+  overflow: hidden;
+  padding-bottom: 89.7%;
+  position: relative;
+  height: 0;
+}
+
+.mapa-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#card-formulario-mapa {
+  padding: 15px;
+}
+
+#boton_enviar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mensajeError {
+  color: red;
+  font-size: 12px;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.float:hover {
+  text-decoration: none;
+  color: #25d366;
+  background-color: #fff;
+}
+
+.my-float {
+  margin-top: 16px;
+}

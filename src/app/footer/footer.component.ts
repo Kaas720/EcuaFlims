@@ -24,4 +24,7 @@ export class FooterComponent implements OnInit {
   TerminoDeUso(){
     this.router.navigate(['/TerminoDeUso']);
   }
+  ContactanosClick(){
+    this.router.navigate(['/Contactanos']);
+  }
 }
