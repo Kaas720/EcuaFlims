@@ -18,6 +18,9 @@ import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { PreguntasFrecuentesCodigoComponent } from './preguntas-frecuentes-codigo/preguntas-frecuentes-codigo.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 import { ContactosComponent } from './contactos/contactos.component';
+import { LoginEcuaFilmsComponent } from './login-ecua-films/login-ecua-films.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,8 @@ import { ContactosComponent } from './contactos/contactos.component';
     PrivacidadComponent,
     PreguntasFrecuentesCodigoComponent,
     PreguntasFrecuentesComponent,
-    ContactosComponent
+    ContactosComponent,
+    LoginEcuaFilmsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,9 @@ import { ContactosComponent } from './contactos/contactos.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

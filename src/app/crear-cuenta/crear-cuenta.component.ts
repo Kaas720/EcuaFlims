@@ -41,7 +41,6 @@ export class CrearCuentaComponent implements OnInit {
         }   
       }
       else{
-        alert("LLEGO");
         id_entradButtonIconoLet.classList.replace("is-validRecurso", "is-valid");
         id_entradButtonIconoLet.style.borderColor ="green";
         this.nombreValidarMensajeVisibilidad="d-none"
@@ -59,7 +58,6 @@ export class CrearCuentaComponent implements OnInit {
         }   
       }
       else{
-        alert("LLEGO");
         id_entradButtonIconoLet.classList.replace("is-validRecurso", "is-valid");
         id_entradButtonIconoLet.style.borderColor ="green";
         this.apellidoValidarMensajeVisibilidad="d-none"
@@ -78,7 +76,6 @@ export class CrearCuentaComponent implements OnInit {
         }   
       }
       else{
-        alert("LLEGO");
         id_entradButtonIconoLet.classList.replace("is-validRecurso", "is-valid");
         id_entradButtonIconoLet.style.borderColor ="green";
         this.correValidarMensajeVisibilidad="d-none"
@@ -143,13 +140,7 @@ export class CrearCuentaComponent implements OnInit {
           
         }
       }
-    }
-    if(this.usuarioLogin.get('usuario')?.value === 'Kevin' &&  this.usuarioLogin.get('password')?.value == '1234emelec') {
-      
-    }
-    else{
-      alert('Usuario no registrado');
-    }     
+    }    
   }
   contrasenaMostrar(iconoFont: string, idInputContrasena: string){
     let tipoInput :any = document.getElementById(idInputContrasena);
