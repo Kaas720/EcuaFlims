@@ -1,6 +1,7 @@
 # ProyectoEcuaFlims
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+El siguiente proyecto es una pagina web similar a HBO MAX este proyecto toma sus estilos para poder tener un diseño similar a ellos pero tambien se da diseños diferentes para que no sea una copia exacta.
+Developer: Kevin Arévalo Saldaña
 
 ## Development server
 
