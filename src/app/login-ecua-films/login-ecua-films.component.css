@@ -1,0 +1,65 @@
+
+#TituloPrincipalLoginCuenta{
+    color: rgb(240, 240, 240);
+    font-size: 32px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+#parrafoPrincipalCrearCuenta{
+    color: rgb(240, 240, 240);
+    font-size: 15px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.parrafoContraseñaCrearCuenta{
+    float: left; 
+    color: rgb(200, 200, 200);
+    font-size: 11.4px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 6px;
+    text-align: left !important;
+}
+#tamanoDivForm{
+    width: 70%;
+    padding-top: 40px;
+}
+.buttonInputs{
+    float: right; 
+    margin-top: -35px;
+    background-color: transparent;
+    padding: 0px;
+    border: none;
+    color: #c4c2c2;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+
+.LabelFormularioCrearCuenta{
+    color: rgb(207, 205, 205);
+    float: left;
+    padding-left:0px;
+    font-size: 17px;
+}
+
+.form-control {
+    box-shadow: none;
+    border-radius: 0%;
+    border: none;
+    border-bottom: 2px solid rgb(207, 205, 205);
+    
+}
+.is-valid{
+    box-shadow: none !important;
+}
+.form-control:focus {
+    border-bottom: 2px solid rgb(91, 28, 230);;
+}
+@media (max-width: 600px) {
+    #tamanoDivForm{
+        width: 100%;
+    }
+}
+@media (max-width: 990px) {
+    #tamanoDivForm{
+        width: 80%;
+    }
+}

@@ -1,0 +1,37 @@
+<div>
+    <button (click)="closeDialog()" class="float-end" style="background-color: transparent; border: none; position: relative; margin-top: 10px; margin-right: 10px;">
+        <i id="Icon2" style="font-size: 25px; color: white;" 
+              class="bi bi-x-circle">
+            </i>
+    </button>
+</div>
+<div id="tamanoDivForm" class="container">
+    <div class="justify-content-center row">
+      <div class="text-center">
+        <h1 id="TituloPrincipalLoginCuenta">Iniciar sesión</h1>
+        <h3>¿Tienes una cuenta de EcuaFilms?</h3>
+        <form  id = "loginUser" [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()">
+            <div class="row"> 
+                <p  style="margin-top: 10px; color:#ff5b83; width: 100%; text-align: center !important;" class="{{CuentaValidarMensajeVisibilidad}}"><i style="font-size: 15px; margin-right: 5px;" class="bi bi-exclamation-circle"></i> La dirección de e-mail o la contraseña no es correcta.</p>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-floating mb-3">
+                         <input formControlName="correo" style="color: white;width: 100%; background-color: transparent !important;padding-left:3px;" type="email" class="form-control form-control-sm is-validRecurso" id="correoInputLogin" placeholder="name@example.com">
+                         <label for="floatingInput" class="LabelFormularioCrearCuenta">Correo electronico</label>
+                         <p  style="margin-top: 10px; color:#ff5b83; width: 100%; text-align: left !important;" class=" {{correValidarMensajeVisibilidadLogin}}"><i style="font-size: 15px; margin-right: 5px; margin-left: 5px;" class="bi bi-exclamation-circle"></i> {{correoValidarMensajeLogin}}</p>
+                    </div>
+                   </div>
+                   <br><br><br><br>
+                   <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="form-floating mb-3">
+                            <input  formControlName="password" style="color: white;width: 100%; background-color: transparent !important;padding-left:3px;" type="password" class="form-control form-control-sm" id="ContrasenaLogin" placeholder="name@example.com">
+                            <label for="floatingInput" class="LabelFormularioCrearCuenta">Contraseña</label>
+                            <button (click)="contrasenaMostrar('IconoBotonContrasenaLogin','ContrasenaLogin')" class="buttonInputs" type="button"><i id="IconoBotonContrasenaLogin" class="bi bi-eye"></i></button>
+                        </div>
+                        <button [disabled] = "!usuarioLogin.valid" class="btn" style="border-radius: 200px; padding-top: 10px;padding-bottom: 10px; padding-left: 60px;padding-right: 60px; border-color: transparent;background-color: #7b2abf; color:white; font-size: 18px;font-family: Roboto, 'Helvetica Neue', sans-serif; box-shadow: 0 5px 12px rgb(0 0 0 / 20%);">INICIAR SESIÓN</button>
+                    </div>
+                </div>
+        </form>
+    </div> 
+</div>
+</div>
+<br><br>
