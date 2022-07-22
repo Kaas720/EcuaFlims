@@ -21,6 +21,18 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { LoginEcuaFilmsComponent } from './login-ecua-films/login-ecua-films.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import { PeliculasComponent } from './peliculas/peliculas.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTabsModule} from '@angular/material/tabs';
+import { HeaderClienteComponent } from './header-cliente/header-cliente.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderSegundarioComponent } from './header-segundario/header-segundario.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +47,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     PreguntasFrecuentesCodigoComponent,
     PreguntasFrecuentesComponent,
     ContactosComponent,
-    LoginEcuaFilmsComponent
+    LoginEcuaFilmsComponent,
+    PeliculasComponent,
+    HeaderClienteComponent,
+    HomeComponent,
+    HeaderSegundarioComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +62,14 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatInputModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule,
+    MatTableModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatListModule,
+    MatSidenavModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

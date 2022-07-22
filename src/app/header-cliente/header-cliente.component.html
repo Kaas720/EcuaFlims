@@ -1,0 +1,41 @@
+<div>
+  <mat-toolbar> 
+    <div style="position: absolute; top:7px; left: 0;width: 15% !important;">
+      <nav class="navbar navbar-dark ">
+        <div class="container-fluid">
+          <button (click)="mostrarDiv()" type="button" style="background-color: transparent; border:none">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <div class="DivNavoculto d-none" id="navbarToggleExternalContent">
+        <div>
+          <button (click)="dirigirseHome()" style="width: 100%; background-color: transparent; border: none; color:white; font-size: 14px;">
+            <i class="bi bi-house"></i> 
+            Home
+          </button>
+          <br>
+          <button (click)="dirigirsePelicula()" style="width: 100%; background-color: transparent; border: none; color:white; font-size: 14px;">
+            <i class="bi bi-film"></i>
+            Peliculas
+          </button>
+        </div>
+      </div>
+    </div>
+      <span class="example-spacer"></span>
+        <span style="color: white;">KEVIN AREVALO</span>
+        <button [matMenuTriggerFor]="menu" style="background-color: transparent!important; border: none !important; margin-top: 8px;">
+            <mat-icon style="background: black; color: white;">account_circle</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button (click)="dirigirseFormadePago()" mat-menu-item>
+              <mat-icon>settings</mat-icon>
+              <span style="color: white;">Forma de pago</span>
+            </button>
+            <button (click)="CerrarSeccion()" mat-menu-item>
+              <mat-icon>power_settings_new</mat-icon>
+              <span style="color: white;">Cerrar Sesión</span>
+            </button>
+          </mat-menu>
+    </mat-toolbar>  
+</div>

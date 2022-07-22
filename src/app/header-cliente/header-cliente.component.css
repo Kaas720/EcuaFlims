@@ -1,0 +1,22 @@
+mat-toolbar{
+    background: rgbA(14, 14, 14,0.9);
+    position: fixed;
+  }
+  
+  .sidenav{
+    color: white;
+  }
+  
+  .example-spacer {
+      flex: 1 1 auto;
+    }
+  
+  img{
+      text-align: center;
+  }
+  #navbarToggleExternalContent{
+    height:  100vh !important;
+    background-color: rgb(15, 15, 15);
+    margin-top: 5px;
+    opacity: 0.95;
+  }

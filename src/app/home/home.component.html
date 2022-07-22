@@ -1,0 +1,224 @@
+<div style="z-index: 2; position: relative!important;">
+  <app-header-cliente></app-header-cliente>
+</div>
+<div id="carouselExampleCaptions" class="carousel slide position-relative ubicacion" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.themoviedb.org/t/p/original/6azpBJGcLx9SKif8h9VMnflBfa.jpg" class="d-block w-100" alt="..." width="80%" height="100%" style="opacity: 0.8;">
+        <div class="carousel-caption d-md-block">
+            <h2>Black Widow</h2>
+            <p>Natasha Romanoff, alias Viuda Negra, se enfrenta a las partes más oscuras de su historia cuando surge una peligrosa conspiración con vínculos con su pasado.</p>
+            <button mat-button class="boton"><mat-icon>play_circle_filled</mat-icon><p class="iconoBoton">Reproducir</p></button>
+            <button mat-button class="boton"><mat-icon>info</mat-icon><p class="iconoBoton">Más información</p></button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.themoviedb.org/t/p/original/h9q0ozwMWy7CK5U7FSZsMVtbsCQ.jpg" class="d-block w-100" alt="..." width="90%" height="100%" style="opacity: 0.8;">
+        <div class="carousel-caption d-md-block">
+          <h2>Avengers: Endgame</h2>
+          <p>En el final épico de la Saga del Infinito, los Avengers se enfrentan a Thanos. Cuando eventos devastadores arrasan con la mitad de la población mundial y fracturan sus filas, los héroes restantes luchan por avanzar.</p>
+          <button mat-button class="boton"><mat-icon>play_circle_filled</mat-icon><p class="iconoBoton">Reproducir</p></button>
+            <button mat-button class="boton"><mat-icon>info</mat-icon><p class="iconoBoton">Más información</p></button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.themoviedb.org/t/p/original/6tZeX0gvlPzHU8phHuiZD8Gsa11.jpg" class="d-block w-100" alt="..." width="90%" height="100%" style="opacity: 0.8;">
+        <div class="carousel-caption d-md-block">
+          <h2>Doctor Strange 2</h2>
+          <p>El Dr. Stephen Strange abre un portal al multiverso al utilizar un hechizo prohibido. Ahora, su equipo debe enfrentarse a una amenaza que podría destruirlo todo.</p>
+          <button mat-button class="boton"><mat-icon>play_circle_filled</mat-icon><p class="iconoBoton">Reproducir</p></button>
+            <button mat-button class="boton"><mat-icon>info</mat-icon><p class="iconoBoton">Más información</p></button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.themoviedb.org/t/p/original/cgEhsQWCq16yxeoHP15Ay9VdU0s.jpg" class="d-block w-100" alt="..." width="90%" height="100%" style="opacity: 0.8;">
+        <div class="carousel-caption d-md-block">
+          <h2>Spiderman: No Way Home</h2>
+          <p>Tras descubrirse la identidad secreta de Peter Parker como Spider-Man, 
+            la vida del joven se vuelve una locura. Peter decide pedirle ayuda al Doctor Strange 
+            para recuperar su vida. Pero algo sale mal y provoca una fractura en el multiverso.</p>
+            <button mat-button class="boton"><mat-icon>play_circle_filled</mat-icon><p class="iconoBoton">Reproducir</p></button>
+            <button mat-button class="boton"><mat-icon>info</mat-icon><p class="iconoBoton">Más información</p></button>
+        </div>
+      </div>
+    </div>
+    <div class="position-absolute top-50 start-0 translate-middle" style="z-index: 1;">
+      <button style="border: none!important; background-color: transparent!important; margin-left: 90px; height: max-content!important;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+      <div>
+        <div class="position-absolute top-50 end-0 translate-middle" style="z-index: 1;">
+          <button style="border: none!important; background-color: transparent!important; height: max-content!important;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>    
+          </button>
+        </div>
+      </div>
+</div>
+
+<br><br><br><br><br>
+<div style="padding: 10px;" class="container">
+  <h2 id="lista">Streaming exclusivo de EcuaFilms</h2>
+<div class="container-fuid" style=" padding: 20px;">
+  <div class="row">
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+      <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+        <button (click)="prev()" style="background-color: transparent; border:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigImage" class="pelicula">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+          <div class="DivisorImagen"  style="width:95%">
+            <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+          </div>
+        </div> 
+      </ngx-slick-carousel>
+    </div>
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+      <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+        <button (click)="next()" style="background-color: transparent; border:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="padding: 10px;" class="container">
+  <h2 id="lista">Lo mas popular</h2>
+<div class="container-fluid" style=" padding: 20px;">
+  <div class="row">
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+      <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+        <button (click)="atras()" style="background-color: transparent; border:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+      <ngx-slick-carousel class="carousel" #slickModal2="slick-carousel" [config]="slideConfigImage" class="pelicula">
+        <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+          <div class="DivisorImagen"  style="width:95%">
+            <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+          </div>   
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+      <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+        <button (click)="sig()" style="background-color: transparent; border:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="padding: 10px;" class="container">
+  <h2 id="lista">En tendencia</h2>
+  <p>Las películas y series más vistas en tu país en los últimos días, ¡no te las pierdas!</p>
+<div class="container-fluid" style=" padding: 20px;">
+  <div class="row">
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+      <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+        <button (click)="back()" style="background-color: transparent; border:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+      <ngx-slick-carousel class="carousel" #slickModal3="slick-carousel" [config]="slideConfigImage" class="pelicula">
+        <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+          <div class="DivisorImagen"  style="width:95%">
+            <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+          </div>   
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+      <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+        <button (click)="sgte()" style="background-color: transparent; border:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="padding: 10px;" class="container">
+  <h2 id="lista">Del Cine a tu Casa</h2>
+  <p>El mejor entretenimiento desde la pantalla grande directo a la comodidad de tu sofá.</p>
+<div class="container-fluid" style=" padding: 20px;">
+  <div class="row">
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+      <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+        <button (click)="reg()" style="background-color: transparent; border:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="col-10 col-sm-8 col-md-8 col-lg-10" style="background-color: transparent;">
+      <ngx-slick-carousel class="carousel" #slickModal4="slick-carousel" [config]="slideConfigImage" class="pelicula">
+        <div ngxSlickItem *ngFor="let slide of slides3" class="slide">
+          <div class="DivisorImagen" style="width:95%">
+            <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+          </div>   
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+      <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+        <button (click)="adelante()" style="background-color: transparent; border:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!--<img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">-->

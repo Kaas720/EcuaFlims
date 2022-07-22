@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div style="width: 100%">
     <div style="height: 90vh;">
       <div>
@@ -13,7 +14,7 @@
                 ">
               PELICULAS Y SERIES ILIMITADAS
             </h5>
-            <img src="https://firebasestorage.googleapis.com/v0/b/morochoreydavid.appspot.com/o/Img%2FMarcado.webp?alt=media&token=8dac14d8-5ecd-46cb-bd5f-65b79c067bb4" class="img-fluid" style="margin-top: 20px" />
+            <img src="assets/Marcado.webp" class="img-fluid" style="margin-top: 20px" />
           </div>
           <br />
           <div id="divisorInfo">
@@ -57,7 +58,7 @@
       <ngx-slick-carousel class="carousel" #slickModalPeliculasTrailer="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let slide of imgFondo" class="slide">
           <div class="row justify-content-center justify-content-md-start">
-            <div  class="col-12 col-sm-6 col-md-3 col-lg-6">
+            <div  class="col-12 col-sm-12 col-md-6 col-lg-6">
               <h3 style="width: 100%;text-align: center; color: white; padding-top:5px; padding-bottom: 5px; height: min-content; background: linear-gradient( to left, rgba(116, 9, 121, 1), rgba(185, 8, 246, 1), rgba(91, 28, 230, 1));">{{slide.p}}</h3>
               <p style="color: white; padding:10px; text-align: justify;">{{slide.sipnosis}}</p>
               <div class="row">
@@ -75,7 +76,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-3 col-lg-6"
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6"
               style=" align-items: center; padding-top: 40px;padding-bottom: 40px;">
               <div class="text-center align-items-center" style="background-image: url('{{ slide.img }}');  background-repeat: no-repeat;
                       background-position: center 100%;
@@ -240,7 +241,7 @@
   <div class="container" >
     <div class="justify-content-center row">
       <div class="text-center">
-          <img src="../assets/linea.webp" width="100%">
+          <img src="assets/linea.webp" width="100%">
       </div>
       <div style="width: max-content; margin-top: -45px ; background-color: rgb(3, 3, 40);" class="text-center">
         <h4
@@ -301,7 +302,7 @@
   <div class="container" >
     <div class="justify-content-center row">
       <div class="text-center">
-          <img src="../assets/linea.webp" width="100%">
+          <img src="assets/linea.webp" width="100%">
       </div>
       <div style="width: max-content; margin-top: -45px ; background-color: rgb(3, 3, 40);" class="text-center">
         <h4

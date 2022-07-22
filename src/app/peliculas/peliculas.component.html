@@ -1,0 +1,279 @@
+<div style="z-index: 1; position: relative!important;">
+  <app-header-cliente></app-header-cliente>
+</div>
+<div class="peliculaPrincipal" style="z-index: 0!important; ">
+    <div class="contenedor">
+      <div class="container">
+        <h2>Batman: El Caballero Oscuro</h2>
+        <p>24/7/2008 (GB) - Drama, Acción, Crimen, Suspense</p>
+        <br>
+        <p>Batman/Bruce Wayne regresa para continuar su guerra contra el crimen. 
+          Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, 
+          Batman se propone destruir el crimen organizado en la ciudad de Gotham. El triunvirato 
+          demuestra su eficacia, pero, de repente, aparece Joker, un nuevo criminal que desencadena 
+          el caos y tiene aterrados a los ciudadanos.</p>
+        <button mat-button class="boton"><mat-icon >play_circle_filled</mat-icon><p class="iconoBoton">Reproducir</p></button>
+        <button mat-button class="boton"><mat-icon >info</mat-icon><p class="iconoBoton">Más información</p></button>
+      </div>
+    </div>
+  </div>
+<div style="position: relative;width: 100%;" class="">
+  <div style="position: relative;z-index: 0!important; height: max-content;">
+      <mat-tab-group mat-align-tabs="center" [backgroundColor]="'primary'" animationDuration="1000ms"> 
+        <mat-tab  label="Recien Añadidos" style="background-color: green;">
+          <ng-template matTabContent>
+            <div style="padding: 20px;">
+              <h2 id="lista">Añadidos Recientemente</h2>
+            <div class="container-fluid" style=" padding: 20px;">
+              <div class="row">
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                  <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+                    <button (click)="atras()" style="background-color: transparent; border:none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+                  <ngx-slick-carousel class="carousel" #slickModal2="slick-carousel" [config]="slideConfigImage">
+                    <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+                      <div style="width:100%">
+                        <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+                      </div>   
+                    </div>
+                  </ngx-slick-carousel>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                  <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+                    <button (click)="sig()" style="background-color: transparent; border:none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </ng-template>
+          
+      </mat-tab>
+        <mat-tab label="Accion" style="width: 100%;">
+          <ng-template matTabContent>
+            <div style="padding: 20px;">
+              <h2 id="lista">Peliculas de Acción</h2>
+            <div class="container-fluid" style=" padding: 20px;">
+              <div class="row">
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                  <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+                    <button (click)="back()" style="background-color: transparent; border:none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+                  <ngx-slick-carousel class="carousel" #slickModal3="slick-carousel" [config]="slideConfigImage">
+                    <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+                      <div style="width:100%">
+                        <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+                      </div>   
+                    </div>
+                  </ngx-slick-carousel>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                  <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+                    <button (click)="sgte()" style="background-color: transparent; border:none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </ng-template>
+      </mat-tab>
+        <mat-tab label="Destacados">
+          <ng-template matTabContent>
+            <div style="padding: 20px;">
+              <h2  id="lista">Lo mas destacado</h2>
+            <div class="container-fluid" style=" padding: 20px;">
+              <div class="row">
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                  <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+                    <button (click)="prev()" style="background-color: transparent; border:none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+                  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigImage">
+                    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                      <div style="width:100%">
+                        <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+                      </div>   
+                    </div>
+                  </ngx-slick-carousel>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                  <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+                    <button (click)="next()" style="background-color: transparent; border:none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </ng-template>
+         
+        </mat-tab>
+      </mat-tab-group>
+  </div>
+</div>
+
+  <div class="d-none">
+    <mat-tab-group mat-align-tabs="center" [backgroundColor]="'primary'" animationDuration="1000ms">
+        <mat-tab label="Destacados">
+            <div style="padding: 20px;">
+                <h2  id="lista">Lo mas destacado</h2>
+              <div class="container-fluid" style=" padding: 20px;">
+                <div class="row">
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                    <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+                      <button (click)="prev()" style="background-color: transparent; border:none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+                          viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigImage">
+                      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                        <div style="width:100%">
+                          <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+                        </div>   
+                      </div>
+                    </ngx-slick-carousel>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                    <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+                      <button (click)="next()" style="background-color: transparent; border:none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+                          viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+        </mat-tab>
+        <mat-tab label="Recien Añadidos">
+            <div style="padding: 20px;">
+                <h2 id="lista">Añadidos Recientemente</h2>
+              <div class="container-fluid" style=" padding: 20px;">
+                <div class="row">
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                    <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+                      <button (click)="atras()" style="background-color: transparent; border:none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+                          viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+                    <ngx-slick-carousel class="carousel" #slickModal2="slick-carousel" [config]="slideConfigImage">
+                      <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
+                        <div style="width:100%">
+                          <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+                        </div>   
+                      </div>
+                    </ngx-slick-carousel>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                    <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+                      <button (click)="sig()" style="background-color: transparent; border:none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+                          viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+        </mat-tab>
+        <mat-tab label="Accion">
+            <div style="padding: 20px;">
+                <h2 id="lista">Peliculas de Acción</h2>
+              <div class="container-fluid" style=" padding: 20px;">
+                <div class="row">
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                    <div class="position-absolute top-50 start-50" style="margin-left:-15px">
+                      <button (click)="back()" style="background-color: transparent; border:none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-left"
+                          viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-10 col-sm-10 col-md-10 col-lg-10" style="background-color: transparent;">
+                    <ngx-slick-carousel class="carousel" #slickModal3="slick-carousel" [config]="slideConfigImage">
+                      <div ngxSlickItem *ngFor="let slide of slides2" class="slide">
+                        <div style="width:100%">
+                          <img style="border-radius: 20px; border-color: transparent;" id="ImagenPeliculasPromocion" src="{{ slide.img }}" alt="" width="250px" class="img-fluid mx-auto d-block">
+                        </div>   
+                      </div>
+                    </ngx-slick-carousel>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 position-relative">
+                    <div class="position-absolute top-50 start-50" style="margin-left:-28px">
+                      <button (click)="sgte()" style="background-color: transparent; border:none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-chevron-right"
+                          viewBox="0 0 16 16">
+                          <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+        </mat-tab>
+    </mat-tab-group>
+  </div>
+  

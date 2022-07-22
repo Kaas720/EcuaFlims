@@ -1,0 +1,44 @@
+.mat-tab-group {
+    margin-bottom: 48px;
+}
+
+h2{
+    color: rgb(151, 146, 146);
+    width: 100%;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.contenedor{
+    font-size: 16px;
+	min-height: 35.62em;
+	color: #fff;
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(https://www.themoviedb.org/t/p/original/cfT29Im5VDvjE0RpyKOSdCKZal7.jpg);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	display: flex;
+	align-items: center;
+}
+
+.container{
+    text-align: justify;
+    margin-top: 3em;
+}
+
+.container .boton:hover{
+    background: rgb(88, 63, 199);
+}
+.boton{
+	margin-top: 15px;
+	border: none;
+	background-color: transparent;
+	color: white;
+	padding: 10px;
+}
+.iconoBoton{
+	position: relative;
+	top:-5px;
+	left: 5px;
+	display: inline;
+}

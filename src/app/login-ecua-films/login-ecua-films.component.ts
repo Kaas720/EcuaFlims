@@ -35,7 +35,7 @@ export class LoginEcuaFilmsComponent implements OnInit {
       else{
         this.correValidarMensajeVisibilidadLogin="d-none";
         if(this.usuarioLogin.get('correo')?.value === 'kevin@hotmail.com' &&  this.usuarioLogin.get('password')?.value == '1234emelec') {
-          alert("Inicio De seccion Exitoso");
+          this.router.navigate(['/Home']);
           this.closeDialog();
         }
         else{
