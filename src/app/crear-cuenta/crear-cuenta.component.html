@@ -16,14 +16,14 @@
                    <div class="form-floating mb-3">
                        <input formControlName="nombre" style="color: white;width: 100%; background-color: transparent !important;padding-left:3px;" type="email" class="form-control form-control-sm is-validRecurso" id="nombreInput" placeholder="name@example.com">
                        <label for="floatingInput" class="LabelFormularioCrearCuenta">Nombre</label>
-                       <p style="color:#ff5b83" class="parrafoContraseñaCrearCuenta {{nombreValidarMensajeVisibilidad}}"><i style="font-size: 11px; margin-right: 5px;" class="bi bi-exclamation-circle"></i> {{nombreValidarMensaje}}</p>
+                       <p style="color:#ff5b83" class="parrafoContrasenaCrearCuenta {{nombreValidarMensajeVisibilidad}}"><i style="font-size: 11px; margin-right: 5px;" class="bi bi-exclamation-circle"></i> {{nombreValidarMensaje}}</p>
                      </div>
                 </div>
                 <div class="col-6 col-sm-6 col-md-6 col-lg-6">
                  <div class="form-floating mb-3">
                       <input formControlName="apellido" style="color: white;width: 100%; background-color: transparent !important;padding-left:3px;" type="email" class="form-control form-control-sm is-validRecurso" id="apellidoInput" placeholder="name@example.com">
                       <label for="floatingInput" class="LabelFormularioCrearCuenta">Apellido</label>
-                      <p style="color:#ff5b83" class="parrafoContraseñaCrearCuenta {{apellidoValidarMensajeVisibilidad}}"> <i style="font-size: 11px; margin-right: 5px;" class="bi bi-exclamation-circle"></i> {{apellidoValidarMensaje}}</p>
+                      <p style="color:#ff5b83" class="parrafoContrasenaCrearCuenta {{apellidoValidarMensajeVisibilidad}}"> <i style="font-size: 11px; margin-right: 5px;" class="bi bi-exclamation-circle"></i> {{apellidoValidarMensaje}}</p>
                 </div>
                 </div>
                 <br><br><br><br>
@@ -31,7 +31,7 @@
                   <div class="form-floating mb-3">
                        <input formControlName="correo" style="color: white;width: 100%; background-color: transparent !important;padding-left:3px;" type="email" class="form-control form-control-sm is-validRecurso" id="correoInput" placeholder="name@example.com">
                        <label for="floatingInput" class="LabelFormularioCrearCuenta">Correo electronico</label>
-                       <p  style="color:#ff5b83" class="parrafoContraseñaCrearCuenta {{correValidarMensajeVisibilidad}}"><i style="font-size: 11px; margin-right: 5px;" class="bi bi-exclamation-circle"></i> {{correoValidarMensaje}}</p>
+                       <p  style="color:#ff5b83" class="parrafoContrasenaCrearCuenta {{correValidarMensajeVisibilidad}}"><i style="font-size: 11px; margin-right: 5px;" class="bi bi-exclamation-circle"></i> {{correoValidarMensaje}}</p>
                   </div>
                  </div>
                  <br><br><br><br>
@@ -40,8 +40,8 @@
                        <input  formControlName="password" style="color: white;width: 100%; background-color: transparent !important;padding-left:3px;" type="password" class="form-control form-control-sm" id="Contrasena" placeholder="name@example.com">
                        <label for="floatingInput" class="LabelFormularioCrearCuenta">Contraseña</label>
                        <button (click)="contrasenaMostrar('IconoBotonContrasena','Contrasena')" class="buttonInputs" type="button"><i id="IconoBotonContrasena" class="bi bi-eye"></i></button>
-                       <p id="parrafoContrasena"class="parrafoContraseñaCrearCuenta d-block">Tu contraseña debe tener, como mínimo, 8 caracteres, e incluir un número.</p>
-                       <p style="color:#ff5b83" class="parrafoContraseñaCrearCuenta {{contrasenaValidarMensajeVisibilidad}}"><i style="font-size: 11px; margin-right: 5px;" class="bi bi-exclamation-circle"></i>{{contrasenaValidarMensaje}}</p>
+                       <p id="parrafoContrasena"class="parrafoContrasenaCrearCuenta d-block">Tu contraseña debe tener, como mínimo, 8 caracteres, e incluir un número.</p>
+                       <p style="color:#ff5b83" class="parrafoContrasenaCrearCuenta {{contrasenaValidarMensajeVisibilidad}}"><i style="font-size: 11px; margin-right: 5px;" class="bi bi-exclamation-circle"></i>{{contrasenaValidarMensaje}}</p>
                   </div>
                   <br>
                   <br>
