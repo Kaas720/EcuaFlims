@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { bottom } from '@popperjs/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-cuenta',
@@ -9,7 +11,7 @@ import { bottom } from '@popperjs/core';
 })
 export class CrearCuentaComponent implements OnInit {
   
-  constructor() { }
+  constructor(private router: Router) { }
   usuarioLogin = new FormGroup({
     nombre: new FormControl('',Validators.required),
     apellido: new FormControl('', Validators.required),
@@ -28,6 +30,7 @@ export class CrearCuentaComponent implements OnInit {
   contrasenaValidarMensajeVisibilidad: string ="d-none";
   onSubmit(){
     const validadorBoleean = true;
+    var crearCuenta = true;
     var letra = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/i;
     if(this.usuarioLogin.get('nombre')?.value != null){
       const nombre : any = this.usuarioLogin.get('nombre')?.value;
@@ -39,6 +42,7 @@ export class CrearCuentaComponent implements OnInit {
           id_entradButtonIconoLet.style.borderColor ="#ff5b83";
           id_entradButtonIconoLet.classList.replace("is-valid", "is-validRecurso");
         }   
+        crearCuenta=false;
       }
       else{
         id_entradButtonIconoLet.classList.replace("is-validRecurso", "is-valid");
@@ -55,7 +59,8 @@ export class CrearCuentaComponent implements OnInit {
         if(id_entradButtonIconoLet!==null){
           id_entradButtonIconoLet.style.borderColor ="#ff5b83";
           id_entradButtonIconoLet.classList.replace("is-valid", "is-validRecurso");
-        }   
+        }
+        crearCuenta=false;   
       }
       else{
         id_entradButtonIconoLet.classList.replace("is-validRecurso", "is-valid");
@@ -74,6 +79,7 @@ export class CrearCuentaComponent implements OnInit {
           id_entradButtonIconoLet.style.borderColor ="#ff5b83";
           id_entradButtonIconoLet.classList.replace("is-valid", "is-validRecurso");
         }   
+        crearCuenta=false;
       }
       else{
         id_entradButtonIconoLet.classList.replace("is-validRecurso", "is-valid");
@@ -95,7 +101,8 @@ export class CrearCuentaComponent implements OnInit {
           if(id_entradButtonIconoLet!==null){
             id_entradButtonIconoLet.style.borderColor ="#ff5b83";
             id_entradButtonIconoLet.classList.replace("is-valid", "is-validRecurso");
-          }   
+          } 
+          crearCuenta=false;  
         }
         else{
           var i;
@@ -118,6 +125,7 @@ export class CrearCuentaComponent implements OnInit {
               id_entradButtonIconoLet.style.borderColor ="#ff5b83";
               id_entradButtonIconoLet.classList.replace("is-valid", "is-validRecurso");
             }   
+            crearCuenta=false;
           }
           else{
             if(digitCounterChar!=0){
@@ -134,13 +142,27 @@ export class CrearCuentaComponent implements OnInit {
                 id_entradButtonIconoLet.style.borderColor ="#ff5b83";
                 id_entradButtonIconoLet.classList.replace("is-valid", "is-validRecurso");
               }   
+              crearCuenta=false;
             }
             
           }
           
         }
       }
-    }    
+    } 
+    if(crearCuenta){
+      Swal.fire({
+        icon: 'success',
+        title: 'Felicitaciones cuenta creada 😉.\n Ahora solo inicia sesión con tus credenciales',
+        allowOutsideClick: false,
+        confirmButtonText: 'Continuar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(['']);
+        }
+      })
+     
+    }  
   }
   contrasenaMostrar(iconoFont: string, idInputContrasena: string){
     let tipoInput :any = document.getElementById(idInputContrasena);
