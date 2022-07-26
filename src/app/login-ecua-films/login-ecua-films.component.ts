@@ -39,7 +39,13 @@ export class LoginEcuaFilmsComponent implements OnInit {
           this.closeDialog();
         }
         else{
-          this.CuentaValidarMensajeVisibilidad="d-block";
+          if(this.usuarioLogin.get('correo')?.value === 'admin@ecuaFilm.ec' &&  this.usuarioLogin.get('password')?.value == 'adminEcuafilm') {
+            this.router.navigate(['Administrador']);
+            this.closeDialog();
+          }
+          else{
+            this.CuentaValidarMensajeVisibilidad="d-block";
+          }      
         }  
       }
     }   

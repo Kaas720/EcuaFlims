@@ -1,0 +1,26 @@
+
+<mat-card> 
+    <div style="text-align:center;">
+        <mat-card-title>Editar Pelicula</mat-card-title>
+        <img src="https://cdn-icons-png.flaticon.com/512/1460/1460461.png" width="120px" alt="no se encuenta" />
+    </div>   
+    <form [formGroup]="peliculaNueva">
+        <mat-form-field class="campos-field" style="width: 100%;">
+            <input matInput [(ngModel)]="data.nombre" placeholder="Nombre" formControlName="nombre">
+        </mat-form-field>
+        <mat-form-field class="campos-field" style="width: 100%;">
+            <input matInput [(ngModel)]="data.genero" placeholder="Categoria" formControlName="categoria">
+        </mat-form-field>
+        <mat-form-field class="campos-field" style="width: 100%;">
+            <input  matInput [(ngModel)]="data.productor"  placeholder="Productora" formControlName="productora" >
+        </mat-form-field>
+        <mat-form-field class="campos-field" style="width: 100%;">
+            <input matInput [(ngModel)]="data.anioEstreno" placeholder="Año Estreno" formControlName="anioEstreno">
+        </mat-form-field>
+        <button class="btn" [disabled] = "!peliculaNueva.valid" (click)="onSubmit()" 
+        style="width: 100%; background-color: green; color: white;">Aceptar</button>  
+        <br><br>
+        <button class="btn" color="accent" (click)="cancelar()" 
+        style="width: 100%; background-color: #e50914; color: white;">Cancelar</button>      
+    </form>
+</mat-card>

@@ -32,6 +32,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { HeaderClienteComponent } from './header-cliente/header-cliente.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderSegundarioComponent } from './header-segundario/header-segundario.component';
+import { AdministradorComponent } from './administrador/administrador.component';
+import { EditarPeliculaComponent } from './editar-pelicula/editar-pelicula.component';
+import { AgregarPeliculaComponent } from './agregar-pelicula/agregar-pelicula.component';
+import { ReportesPeliculaComponent } from './reportes-pelicula/reportes-pelicula.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,11 @@ import { HeaderSegundarioComponent } from './header-segundario/header-segundario
     PeliculasComponent,
     HeaderClienteComponent,
     HomeComponent,
-    HeaderSegundarioComponent
+    HeaderSegundarioComponent,
+    AdministradorComponent,
+    EditarPeliculaComponent,
+    AgregarPeliculaComponent,
+    ReportesPeliculaComponent
   ],
   imports: [
     BrowserModule,

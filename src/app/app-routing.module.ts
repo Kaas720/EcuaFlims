@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdministradorComponent } from './administrador/administrador.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { FormaDePagoComponent } from './forma-de-pago/forma-de-pago.component';
@@ -9,6 +10,7 @@ import { PeliculasComponent } from './peliculas/peliculas.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { PruebaVelocidadComponent } from './prueba-velocidad/prueba-velocidad.component';
+import { ReportesPeliculaComponent } from './reportes-pelicula/reportes-pelicula.component';
 import { TerminoDeUsoComponent } from './termino-de-uso/termino-de-uso.component';
 
 
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:'Contactanos',component:ContactosComponent},
   {path:'Peliculas',component:PeliculasComponent},
   {path:'Home',component:HomeComponent},
-  {path:'FormaPago',component:FormaDePagoComponent}
+  {path:'FormaPago',component:FormaDePagoComponent},
+  {path:'Administrador',component:AdministradorComponent},
+  {path:'Reportes',component:ReportesPeliculaComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,87 @@
+<div style="
+    width: 100%;
+    background-color: rgb(5, 5, 68);;
+    position: relative;
+    top: 0px;
+    height: 58px;
+    "
+    class="position-relative">
+    <div  class="position-absolute top-50 start-0 translate-middle" style="left: 100px !important;">
+        <img src="assets/4Logo.png"  class="img-fluid img" src="assets/4Logo.png" alt="Placeholder" width="180px">
+    </div>
+    <div class="float-end">
+        <div class="position-relative" style="margin-top: 12px">
+            <h2 style="display: inline; color: white; padding-right: 20px">
+                Administrador
+            </h2>
+            <i (click)="abrirDiv()" style="
+            display: inline;
+            font-size: 26px;
+            color: white;
+            padding-right: 20px;
+        " class="bi bi-person-workspace"></i>
+        </div>
+    </div>
+</div>
+<div class="position-relative">
+    <div style="background-color: rgba(0, 0, 0, 0.904); width: 200px; height: 80px;" class="position-absolute top-0 end-0 d-none" id="SalirCuenta">
+        <button (click)="abrirReportes()" class="btn" style="width: 100%; height: 50%; background-color: transparent; border: none; color: white">
+            <i class="bi bi-file-earmark-bar-graph"></i> Reportes
+        </button>
+        <button (click)="cerrarSesion()" class="btn" style="width: 100%; height: 50%; background-color: transparent; border: none; color: white">
+            <i class="bi bi-power"></i> Cerrar Sesión
+        </button>
+    </div>
+</div>
+<div>
+    <br>
+    <br>
+    <h1 style="
+      color: white;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    ">
+        Top 10 peliculas mas vistas en esta semana
+    </h1>
+</div>
+<div>
+    <br>
+    <div class="container">
+        <button (click)="generarReporte()" style="float: right;" class="btn btn-primary">
+            <i class="bi bi-file-earmark-bar-graph"></i> Generar Reporte
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <table class="table table-dark table-striped align-middle">
+            <thead>
+                <tr>
+                    <th style="text-align: center; color: rgba(235, 235, 235, 0.911)" scope="col">
+                        #
+                    </th>
+                    <th style="text-align: center; color: rgba(235, 235, 235, 0.911)" scope="col">
+                        Nombre
+                    </th>
+                    <th style="text-align: center; color: rgba(235, 235, 235, 0.911)" scope="col">
+                        Categoria
+                    </th>
+                    <th style="text-align: center; color: rgba(235, 235, 235, 0.911)" scope="col">
+                        Productora
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let slide of data let i= index;"  class="table-group-divider">
+                <tr>
+                    <td align="center">{{i+1}}</td>
+                    <td align="center">{{ slide.nombre }}</td>
+                    <td align="center">{{ slide.categoria }}</td>
+                    <td align="center">{{ slide.productora }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
