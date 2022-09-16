@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { PeliculasService } from '../services/peliculas.service';
 
 @Component({
   selector: 'app-home',
@@ -8,32 +9,31 @@ import { SlickCarouselComponent } from 'ngx-slick-carousel';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-  slides = [
-    {img: "https://es.web.img2.acsta.net/pictures/14/04/30/11/55/592219.jpg"},
-    {img: "https://cartelerasdecine.info/wp-content/uploads/2019/10/Guason-pelicula-estreno-2019-carteleras-cine-Joker-Edited.jpg"},
-    {img: "https://i.pinimg.com/originals/92/54/c8/9254c8d0be121b259c185db4386a317c.jpg"},
-    {img: "https://www.ecartelera.com/carteles/3400/3463/001_m.jpg"},
-    {img: "https://www.ecartelera.com/carteles/1400/1497/001_m.jpg"},
-    {img: "https://www.themoviedb.org/t/p/w500/cUlWqDLEYMN3OWlOZ0U18WcIw5F.jpg"},
-    {img: "https://www.ecartelera.com/carteles/1600/1614/001_m.jpg"},
-    {img: "https://www.ecartelera.com/carteles/4300/4377/001_m.jpg"},
-    {img: "https://es.web.img3.acsta.net/pictures/14/04/30/11/50/167156.jpg"},
-    {img: "https://www.themoviedb.org/t/p/original/VEfCqkbK062Egob26rYQWAJoE7.jpg"}
-  ];
+  constructor(private service : PeliculasService, private peliculaInterface: PeliculasService) { }
+  slides : any;
 
   slides1 = [
-    {img: "https://es.web.img3.acsta.net/pictures/15/11/20/13/14/031438.jpg"},
-    {img: "https://www.themoviedb.org/t/p/original/jYbANSoj6qGTbDkstq9J5Vy8fRF.jpg"},
-    {img: "https://www.themoviedb.org/t/p/original/9MsCANWyLJmz2MAEqiy9vKMpyc8.jpg"},
-    {img: "https://www.quepeliculaver.com/uploads/2021/12/poster-11-rapidos-y-furiosos-9.jpg"},
-    {img: "https://www.ubuy.ec/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjFHTWxBZEY4TEwuX0FDX1NMMTIwMF8uanBn.jpg"},
-    {img: "https://www.themoviedb.org/t/p/original/d7HsbvoGkd5FZ7TB4z1uLKJnE90.jpg"},
-    {img: "https://www.themoviedb.org/t/p/original/mtvqzEb4vYdOQP984k1dAuWMdiz.jpg"},
-    {img: "https://www.themoviedb.org/t/p/original/6VFzRo4lKsEy5jlcRREctOWR2IC.jpg"},
-    {img: "https://www.themoviedb.org/t/p/original/suaooqn1Mnv60V19MoGxneMupJs.jpg"}
+    {img: "https://es.web.img3.acsta.net/pictures/15/11/20/13/14/031438.jpg",id:"11"},
+    {img: "https://www.themoviedb.org/t/p/original/jYbANSoj6qGTbDkstq9J5Vy8fRF.jpg",id:"12"},
+    {img: "https://www.themoviedb.org/t/p/original/9MsCANWyLJmz2MAEqiy9vKMpyc8.jpg",id:"13"},
+    {img: "https://www.quepeliculaver.com/uploads/2021/12/poster-11-rapidos-y-furiosos-9.jpg",id:"14"},
+    {img: "https://www.ubuy.ec/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjFHTWxBZEY4TEwuX0FDX1NMMTIwMF8uanBn.jpg",id:"15"},
+    {img: "https://www.themoviedb.org/t/p/original/d7HsbvoGkd5FZ7TB4z1uLKJnE90.jpg",id:"16"},
+    {img: "https://www.themoviedb.org/t/p/original/mtvqzEb4vYdOQP984k1dAuWMdiz.jpg",id:"17"},
+    {img: "https://www.themoviedb.org/t/p/original/6VFzRo4lKsEy5jlcRREctOWR2IC.jpg",id:"18"},
+    {img: "https://www.themoviedb.org/t/p/original/suaooqn1Mnv60V19MoGxneMupJs.jpg",id:"19"}
   ];
-
+  slides5 = [
+    {img: "https://pic-bstarstatic.akamaized.net/ugc/0583723726421aa5a319a28c39656b6710f3fd72.jpg",id:"26"},
+    {img: "https://m.media-amazon.com/images/I/71C2hZMZjhL._AC_SL1500_.jpg",id:"27"},
+    {img: "https://m.media-amazon.com/images/I/71C2hZMZjhL._AC_SL1500_.jpg",id:"28"},
+    {img: "https://m.media-amazon.com/images/I/71C2hZMZjhL._AC_SL1500_.jpg",id:"29"},
+    {img: "https://www.ubuy.ec/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjFHTWxBZEY4TEwuX0FDX1NMMTIwMF8uanBn.jpg",id:"30"},
+    {img: "https://www.themoviedb.org/t/p/original/d7HsbvoGkd5FZ7TB4z1uLKJnE90.jpg",id:"31"},
+    {img: "https://www.themoviedb.org/t/p/original/mtvqzEb4vYdOQP984k1dAuWMdiz.jpg",id:"32"},
+    {img: "https://www.themoviedb.org/t/p/original/6VFzRo4lKsEy5jlcRREctOWR2IC.jpg",id:"33"},
+    {img: "https://www.themoviedb.org/t/p/original/suaooqn1Mnv60V19MoGxneMupJs.jpg",id:"34"}
+  ];
   slides2 = [
     {img: "https://dam.smashmexico.com.mx/wp-content/uploads/2019/05/Spider-man-far-from-home-nuevos-posters-europa-05-oficial.jpg"},
     {img: "https://m.media-amazon.com/images/I/8142NLEI3CL._AC_SY879_.jpg"},
@@ -57,9 +57,54 @@ export class HomeComponent implements OnInit {
     {img: "https://www.themoviedb.org/t/p/original/bPIm1SXYp5RQ3c4wP91JQRewIb8.jpg"},
     {img: "https://www.themoviedb.org/t/p/original/2LJC0MCghmmgSUNshpfA5RjHQay.jpg"}
   ];
-
-  slideConfigImage = {"slidesToShow": 4,"nextArrow":false,"prevArrow":false,"accessibility":false,"autoplay": false,
-  "autoplaySpeed": 3000,"responsive": [
+  ImgPrincipales = [
+    {img: "https://www.lavanguardia.com/peliculas-series/images/movie/backdrop/2019/8/w1280/iGnCzXEx0cFlUbpyAMeHwHWhPhx.jpg"},
+    {img: "https://www.lavanguardia.com/peliculas-series/images/movie/backdrop/2019/8/w1280/iGnCzXEx0cFlUbpyAMeHwHWhPhx.jpg"},
+    {img: "https://www.lavanguardia.com/peliculas-series/images/movie/backdrop/2019/8/w1280/iGnCzXEx0cFlUbpyAMeHwHWhPhx.jpg"},
+    {img: "https://www.lavanguardia.com/peliculas-series/images/movie/backdrop/2019/8/w1280/iGnCzXEx0cFlUbpyAMeHwHWhPhx.jpg"}
+  ]
+  ImgInico = {"slidesToShow": 1,"nextArrow":false,"prevArrow":false,"accessibility":false,"autoplay": false};
+  slideConfigImage = {"slidesToShow": 6, "slidesToScroll": 6,"nextArrow":false,"prevArrow":false,"accessibility":false,"autoplay": false,
+  "centerMode": true,"responsive": [
+    {
+      breakpoint: 600,
+      settings: {  
+       slidesToShow: 1,
+       centerMode:false,
+       slidesToScroll: 6
+      }  
+    },
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2,
+        centerMode:false
+      }
+    }
+  ]
+  };
+  slideConfigImage3 = {"slidesToShow": 3, "nextArrow":false,"prevArrow":false,"accessibility":false,"autoplay": false,
+  "centerMode": true,"responsive": [
+    {
+      breakpoint: 600,
+      settings: {  
+       slidesToShow: 1,
+       centerMode:false,
+       slidesToScroll: 6
+      }  
+    },
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2,
+        centerMode:false
+      }
+    }
+  ]
+  };
+  slideConfigImage4 = {"slidesToShow": 2, "nextArrow":false,"prevArrow":false,"accessibility":false,"autoplay": false};
+  slideConfigImageTendencia = {"slidesToShow": 4,"slidesToScroll": 4,"nextArrow":false,"prevArrow":false,"accessibility":false,"autoplay": false,
+  "centerMode": true,"responsive": [
     {
       breakpoint: 600,
       settings: {  
@@ -77,18 +122,24 @@ export class HomeComponent implements OnInit {
   ]
   };
 
-
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent
-  next() {
-    this.slickModal.slickNext();
+  
+  @ViewChild('slickModal2')
+  slickModal2!: SlickCarouselComponent
+  next(id: number): void {
+    if(id==1){
+      this.slickModal.slickNext();
+    }
+    else{
+      this.slickModal2.slickNext();
+    }
+    
   }
   prev() {
     this.slickModal.slickPrev();
   }
 
-  @ViewChild('slickModal2')
-  slickModal2!: SlickCarouselComponent
   sig(){
     this.slickModal2.slickNext();
   }
@@ -114,8 +165,31 @@ export class HomeComponent implements OnInit {
   reg(){
     this.slickModal4.slickPrev();
   }
-
+  cargarPeliculas(){
+    this.service.getPeliculas().subscribe((data : any) =>{
+      this.slides = data;
+    },
+    (errorData) => {
+      alert(errorData);    
+    }
+    );
+  }
   ngOnInit(): void {
+    this.cargarPeliculas();
   }
 
+  CrearBorderEnImg(id:string){
+    let img = <HTMLVideoElement> document.getElementById(id);
+    img.style.border='5px solid green';
+  }
+  cambiarColorBoton(boton: string){
+    let botonId = <HTMLVideoElement> document.getElementById(boton);
+    botonId.style.fontSize = '32px';
+    botonId.style.color = 'white';
+  }
+  restaurarColorBoton(boton: string){
+    let id = <HTMLVideoElement> document.getElementById(boton);
+    id.style.fontSize = '30px';
+    id.style.color = 'rgb(202, 199, 199)';
+  }
 }

@@ -1,7 +1,9 @@
 
 export interface PeliculaInterface {
-    nombre: string;
-    categoria: string;
-    productora: string;
-    anioEstreno: number;
+    Id : number;
+    nombrePelicula : string;
+    imagenPrincipal : string;
+    imagenSegundaria  : string;
+    imagenTercera  : string;
+    idCategoria : number;
 }

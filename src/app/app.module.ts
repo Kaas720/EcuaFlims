@@ -36,7 +36,8 @@ import { AdministradorComponent } from './administrador/administrador.component'
 import { EditarPeliculaComponent } from './editar-pelicula/editar-pelicula.component';
 import { AgregarPeliculaComponent } from './agregar-pelicula/agregar-pelicula.component';
 import { ReportesPeliculaComponent } from './reportes-pelicula/reportes-pelicula.component';
-
+import { ClientePaginaPrincipalComponent } from './cliente-pagina-principal/cliente-pagina-principal.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,8 @@ import { ReportesPeliculaComponent } from './reportes-pelicula/reportes-pelicula
     AdministradorComponent,
     EditarPeliculaComponent,
     AgregarPeliculaComponent,
-    ReportesPeliculaComponent
+    ReportesPeliculaComponent,
+    ClientePaginaPrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,8 @@ import { ReportesPeliculaComponent } from './reportes-pelicula/reportes-pelicula
     MatToolbarModule,
     MatListModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

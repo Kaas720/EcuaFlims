@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { UserService} from 'src/app/services/user.service';
+import { cedrenciales } from '../interfaces/credenciales';
 
 @Component({
   selector: 'app-login-ecua-films',
@@ -11,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class LoginEcuaFilmsComponent implements OnInit {
 
-  constructor(private router: Router, private dialogRef: MatDialogRef<LoginEcuaFilmsComponent>) { }
+  constructor(private service : UserService,private router: Router, private dialogRef: MatDialogRef<LoginEcuaFilmsComponent>) { }
   usuarioLogin = new FormGroup({
     correo: new FormControl('',Validators.required),
     password: new FormControl('', Validators.required)
@@ -21,6 +23,8 @@ export class LoginEcuaFilmsComponent implements OnInit {
   CuentaValidarMensajeVisibilidad="d-none";
   correValidarMensajeVisibilidadLogin: string ="d-none";
   correoValidarMensajeLogin: string ="HOLAA";
+  correoTemp  :  any;
+  passwordTemp : any;
   onSubmit(){
     this.CuentaValidarMensajeVisibilidad="d-none";
     this.correValidarMensajeVisibilidadLogin="d-none";
@@ -34,19 +38,26 @@ export class LoginEcuaFilmsComponent implements OnInit {
       }
       else{
         this.correValidarMensajeVisibilidadLogin="d-none";
-        if(this.usuarioLogin.get('correo')?.value === 'kevin@hotmail.com' &&  this.usuarioLogin.get('password')?.value == '1234emelec') {
+        this.correoTemp = this.usuarioLogin.value.correo;
+        this.passwordTemp = this.usuarioLogin.value.password;
+        this.service.login(this.usuarioLogin.value as cedrenciales).subscribe((data : any) =>{
+          console.log(data);
+          localStorage.setItem('userName', this.correoTemp);
+          localStorage.setItem('token_value', data);
+          this.router.navigate(['/Home']);
+          this.closeDialog();
+        },
+        (errorData) => {
+          this.CuentaValidarMensajeVisibilidad="d-block";    
+        }
+        );
+        /*if(this.usuarioLogin.get('correo')?.value === 'kevin@hotmail.com' &&  this.usuarioLogin.get('password')?.value == '1234emelec') {
           this.router.navigate(['/Home']);
           this.closeDialog();
         }
         else{
-          if(this.usuarioLogin.get('correo')?.value === 'admin@ecuaFilm.ec' &&  this.usuarioLogin.get('password')?.value == 'adminEcuafilm') {
-            this.router.navigate(['Administrador']);
-            this.closeDialog();
-          }
-          else{
-            this.CuentaValidarMensajeVisibilidad="d-block";
-          }      
-        }  
+          this.CuentaValidarMensajeVisibilidad="d-block";    
+        }  */
       }
     }   
   }

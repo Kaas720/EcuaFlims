@@ -66,7 +66,7 @@ nav: any;
   }
   displayedColumns: string[] = ['nombre','categoria', 'productora','anioEstreno','boton']
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<PeliculaInterface>(this.data as PeliculaInterface[]);
+    //this.dataSource = new MatTableDataSource<PeliculaInterface>(this.data as PeliculaInterface[]);
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
