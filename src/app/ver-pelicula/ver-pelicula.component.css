@@ -1,0 +1,20 @@
+.StyleImage{
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 5.79%, rgba(0, 0, 0, 0.008) 11.42%, rgba(0, 0, 0, 0.035) 17.04%, rgba(0, 0, 0, 0.082) 22.67%, rgba(0, 0, 0, 0.15) 28.3%, rgba(0, 0, 0, 0.23) 33.93%, rgba(0, 0, 0, 0.333) 39.56%, rgba(0, 0, 0, 0.443) 45.18%, rgba(0, 0, 0, 0.557) 50.81%, rgba(0, 0, 0, 0.667) 56.44%, rgba(0, 0, 0, 0.77) 62.07%, rgba(0, 0, 0, 0.85) 67.7%, rgba(0, 0, 0, 0.918) 73.33%, rgba(0, 0, 0, 0.965) 78.95%, rgba(0, 0, 0, 0.992) 84.58%, rgb(0, 0, 0) 90.21%);
+    height: 88vh;
+    width: 100%;
+    background-color: aquamarine;
+}
+#imagenSegundaria{
+    z-index: -1; 
+    opacity:0.85;
+    width: 70%;
+}
+@media (max-width: 800px){
+    #imagenSegundaria{
+        width: 0%;
+    } 
+    #TituloPrincipal{
+        font-size: 32px;
+        width: 100%;
+    }
+}

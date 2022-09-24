@@ -1,0 +1,113 @@
+<div>
+
+  <div style="
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 14, 20, 0.8)),
+        url({{imagenFondo}});
+      background-repeat: no-repeat;
+      width: 100%;
+      background-position: center 25%;
+    background-size: cover;
+    ">
+    <br /><br /><br /><br /><br /><br />
+    <div>
+      <div  class="position-relative">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-5 col-lg-5 text-center" style="padding: 10px">
+              <img class="img-fluid" id="imagenSegundaria"
+                this.imagenPoster = data.imagenPrincipal
+                src="{{imagenPoster}}"
+                alt=""/>
+            </div>
+            <div class="col-12 col-sm-12 col-md-7 col-lg-7" style=" color: rgb(202, 199, 199);">
+              <h1 class="text-center">{{titulo}}</h1>
+              <h2>Sipnosis</h2>
+              <h3 class="text-break" style="text-align:justify">
+                {{sipnosis}}
+              </h3>
+              <div class="row">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                  <h2>Fecha de estreno</h2>
+                  <h3>9 de agosto de 2019</h3>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                  <h2>Puntuación</h2>
+                  <h3>
+                    <i id="estrella1" class="bi bi-star"></i>
+                    &nbsp;&nbsp;<i id="estrella2" class="bi bi-star"></i>  
+                    &nbsp;&nbsp;<i id="estrella3" class="bi bi-star"></i>
+                    &nbsp;&nbsp;<i id="estrella4" class="bi bi-star"></i>
+                    &nbsp;&nbsp;<i id="estrella5" class="bi bi-star"></i>
+                  </h3>
+                </div>
+              </div>
+              <br>
+              <div class="text-center">
+                <a  data-bs-toggle="modal" [attr.data-bs-target]="'#Thor'" type="button" class="btn btn-primary">Ver Ahora <i class="bi bi-play-circle"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="{{linkDescarga}}" class="btn btn-success">Descargar <i class="bi bi-cloud-arrow-down"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+  <div style="position: relative; margin-top: 20px; color: white">
+    <div style="position: relative; left: 50px; display: inline-block">
+      <h1>Más contenido como este</h1>
+    </div>
+    <div style="width: 100%;">
+      <div class="position-relative">
+        <div>
+          <ngx-slick-carousel class="carousel" #slickModal2="slick-carousel" [config]="slideConfigImage">
+            <div  ngxSlickItem *ngFor="let slide of ImgPrincipal" class="slide">
+              <div  style="padding: 5px;" (mouseover)="cambiarColorBotonv2(slide.id+'butoon',slide.id+'')" (mouseout)="restaurarColorBotonV2(slide.id+'butoon',slide.id+'')"  class="position-relative text-center">
+                <div style="width:88%; position:absolute; top:250px; left: 11px;" class="">
+                  <a style="font-size: 22px; width:100%" class="invisible btn btn-success" id="{{slide.id}}butoon" (click)="enviarNuevaVentana(slide.id+'')">Ver ahora  <i class="bi bi-play-circle"></i></a>
+                </div>
+                <img class="img-fluid rounded" id="{{ slide.id }}" style="height: 300px; width: 100%;" src="{{ slide.imagenPrincipal }}" alt="">
+              </div>
+            </div> 
+          </ngx-slick-carousel>
+        </div>
+        <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
+          <button (click)="prev(2)" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+        </div>
+        <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
+          <button (click)="next(2)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
+            <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  <div class="modal fade" id="Thor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-bs-keyboard="false" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div style=" background-color: rgba(2, 2, 2, 0.856); " class="modal-content">
+      <div class="modal-body">
+        <button (click)="cerrarVideo('videoWhatif')" type="button" data-bs-dismiss="modal"
+          style="color: white;background-color: transparent; float: right; border: none; margin-bottom: 10px;"><svg
+            xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-x-circle"
+            viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+          </svg></button>
+          <div *ngFor="let video of peliculasLink">
+            <video id="videoWhatif" class="video-pause" controls width="100%">
+              <source
+                src="{{video.links}}"
+                type="video/mp4" />
+              Navegador no copatible
+            </video>  
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
