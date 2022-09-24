@@ -44,7 +44,7 @@ export class LoginEcuaFilmsComponent implements OnInit {
           console.log(data);
           localStorage.setItem('userName', this.correoTemp);
           localStorage.setItem('token_value', data);
-          this.router.navigate(['/Home']);
+          this.router.navigate(['/user']);
           this.closeDialog();
         },
         (errorData) => {

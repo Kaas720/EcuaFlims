@@ -14,9 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
     background: rgba(0,0,0,.8) !important;
 }
-.swal2-popup {
-    background: linear-gradient( to left, rgba(116, 9, 121, 1), rgba(185, 8, 246, 1), rgba(91, 28, 230, 1)) !important;
-}
+
 .swal2-title{
-    color: white !important;
+    color: rgb(70, 98, 189) !important;
 }

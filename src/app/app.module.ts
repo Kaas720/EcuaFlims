@@ -38,6 +38,11 @@ import { AgregarPeliculaComponent } from './agregar-pelicula/agregar-pelicula.co
 import { ReportesPeliculaComponent } from './reportes-pelicula/reportes-pelicula.component';
 import { ClientePaginaPrincipalComponent } from './cliente-pagina-principal/cliente-pagina-principal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VerPeliculaComponent } from './ver-pelicula/ver-pelicula.component';
+import { ListarPeliculasCategoriaComponent } from './listar-peliculas-categoria/listar-peliculas-categoria.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FooterClienteComponent } from './footer-cliente/footer-cliente.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +66,11 @@ import { HttpClientModule } from '@angular/common/http';
     EditarPeliculaComponent,
     AgregarPeliculaComponent,
     ReportesPeliculaComponent,
-    ClientePaginaPrincipalComponent
+    ClientePaginaPrincipalComponent,
+    VerPeliculaComponent,
+    ListarPeliculasCategoriaComponent,
+    FooterClienteComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -80,6 +89,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatSidenavModule,
     MatTabsModule,
+    MatPaginatorModule,
     HttpClientModule
   ],
   providers: [],

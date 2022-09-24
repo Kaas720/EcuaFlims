@@ -1,0 +1,24 @@
+
+<br><br><br><br>
+<div class="container">
+  <h1 id="tituloPrincipal" style="color:rgb(238, 235, 235)">{{palabraBuscada}}</h1>
+</div>
+<div class="position-relative container">
+  <div class="position-absolute top-50 end-0">
+      <mat-paginator style="color:white; width: max-content; background-color: rgb(3, 3, 40);" [length]="ImgPrincipal.length" [pageSize]="pageSize" [pageSizeOptions]="[12, 24]" (page)="cambiarpagina($event)">
+      </mat-paginator> 
+  </div>
+</div>
+<br><br><br><br>
+<div class="container">
+  <div  class="row">
+    <div class="col-6 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of ImgPrincipal | slice:desde:hasta">
+        <div  (mouseover)="cambiarColorBotonv2(item.id+'butoon',item.id+'')" (mouseout)="restaurarColorBotonV2(item.id+'butoon',item.id+'')" class="position-relative text-center" style="margin-bottom: 30px;">
+          <img id="{{item.id}}" src="{{item.imagenPrincipal}}" class="img-responsive" width="100%" alt="named image" />
+          <div>
+            <a (click)="enviarNuevaVentana(item.id+'')" id="{{item.id}}butoon" class="position-absolute invisible bottom-0 start-0 btn btn-success" style="width: 98%; left:10px;font-size: 16px; margin-left: 3px; margin-bottom: 3px;"><i class="bi bi-play-circle"></i> Ver ahora</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

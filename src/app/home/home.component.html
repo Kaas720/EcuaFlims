@@ -1,34 +1,27 @@
 <div>
-  <div style="z-index: 100; position: relative!important;">
-    <app-header-cliente></app-header-cliente>
-  </div>
   <div>
-    <ngx-slick-carousel class="carousel" #slickModal3="slick-carousel" [config]="ImgInico">
-      <div ngxSlickItem *ngFor="let slide of ImgPrincipales" class="slide">
-        <div style="height: 88vh" class="position-relative">
-          <img style="z-index: -1; opacity: 0.65;"src="{{ slide.img }}" alt="" width="100%" height="100%"> 
+    <ngx-slick-carousel class="carousel" #Principal="slick-carousel" [config]="ImgInico">
+      <div ngxSlickItem *ngFor="let slide of ImgPrincipal" class="slide">
+        <div id="DivPrincipal"  style="background-image: linear-gradient(rgba(3, 3, 40, 0.25), rgba(3, 3, 40, 0.25)),
+        url({{slide.imagenSegundaria}});
+        "class="position-relative">
           <div class="position-absolute top-50 start-0 container">
-            <button style="position: relative; top:-25px; left: 15px;z-index: 4; color: white; font-size: 52px; background-color: transparent; border:none"><i class="bi bi-chevron-left"></i></button>
+            <button (click)="prev(1)" style="position: relative; top:-25px; left: 15px;z-index: 4; color: white; font-size: 52px; background-color: transparent; border:none"><i class="bi bi-chevron-left"></i></button>
           </div>
           <div class="position-absolute top-50 start-0 container">
-            <div style="z-index:1; position: relative; top:-25px; left: 175px; width:min-content" class="row">
+            <div id="divSegundario" class="row">
               <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <img  src="https://www.dafont.com/forum/attach/orig/6/6/668583.png?1" width="300px" alt="No cargo la imagen">
+                <img  src="{{slide.imagenTercera}}" width="250px"  alt="No cargo la imagen">
               </div>
-              <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center" style="padding-top: 15px;">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center" style="padding-top: 15px;">
                 <div>
-                  <button style="z-index: 2; width: 100%; padding:8px; color: white; background-color: rgb(15,15,15); border-color: transparent; border-radius: 5px; font-size: 15px;"><i class="bi bi-play-circle"></i> Ver ahora</button>
-                </div>
-              </div>
-              <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center" style="padding-top: 15px;">
-                <div>
-                  <button style="width: 100%; font-size: 15px; padding:8px; z-index: 2; color: white; background-color:rgb(15,15,15); border-color: transparent; border-radius: 5px;">Más información</button>
+                  <button (click)="enviarNuevaVentana(slide.id)"  style="z-index: 2; width: 50%; padding:8px; color: white; background-color: rgb(15,15,15); border-color: transparent; border-radius: 5px; font-size: 15px;"><i class="bi bi-play-circle"></i> Ver ahora</button>
                 </div>
               </div>
             </div>
           </div>
           <div class="position-absolute top-50 end-0">
-            <button style="position: relative; top:-25px; right: 20px;z-index: 4; color: white; font-size: 52px; background-color: transparent; border:none"><i class="bi bi-chevron-right"></i></button>
+            <button (click)="next(1)" style="position: relative; top:-25px; right: 20px;z-index: 4; color: white; font-size: 52px; background-color: transparent; border:none"><i class="bi bi-chevron-right"></i></button>
           </div>
         </div>   
       </div>
@@ -36,54 +29,60 @@
   </div>
   <div style="position: relative; margin-top:20px; color: white">
     <div style="position: relative; left:50px; display: inline-block;">
-      <h1>Grandes exitos de EcuaFilms</h1>
+      <h1>Anime</h1>
     </div>
-  <div style="width: 100%;">
-    <div class="position-relative">
-      <div>
-        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigImage">
-          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-            <div style="padding: 5px;" class="pelicula">
-              <img id="{{slide.Id}}" style="height: 300px; width: 200px;" src="{{ slide.imagenPrincipal }}" alt="">
-            </div>
-          </div> 
-        </ngx-slick-carousel>
-      </div>
-      <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
-        <button (click)="prev()" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-      </div>
-      <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
-        <button (click)="next(1)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
-          <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
-        </button>
+    <div style="width: 100%;">
+      <div class="position-relative">
+        <div>
+          <ngx-slick-carousel class="carousel" #GrandesExitos="slick-carousel" [config]="slideConfigImage">
+            <div  ngxSlickItem *ngFor="let slide of Img_Grandes_exitos_de_EcuaFilms" class="slide">
+              <div  style="padding: 5px;" (mouseover)="cambiarColorBotonv2(slide.id+'butoon',slide.id+'')" (mouseout)="restaurarColorBotonV2(slide.id+'butoon',slide.id+'')"  class="position-relative text-center">
+                <div style="width:88%; position:absolute; top:250px; left: 11px;" class="">
+                  <a style="font-size: 22px; width:100%" class="invisible btn btn-success" id="{{slide.id}}butoon" (click)="enviarNuevaVentana(slide.id+'')">Ver ahora  <i class="bi bi-play-circle"></i></a>
+                </div>
+                <img class="img-fluid rounded" id="{{ slide.id }}" style="height: 300px; width: 100%;" src="{{ slide.imagenPrincipal }}" alt="">
+              </div>
+            </div> 
+          </ngx-slick-carousel>
+        </div>
+        <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
+          <button (click)="prev(2)" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+        </div>
+        <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
+          <button (click)="next(2)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
+            <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
   
   <div style="position: relative; margin-top:20px; color: white">
     <div style="position: relative; left:50px; display: inline-block;">
-      <h1>En tendencia</h1>
+      <h1>Acción</h1>
     </div>
   <div style="width: 100%;">
     <div class="position-relative">
       <div>
-        <ngx-slick-carousel class="carousel" #slickModal2="slick-carousel" [config]="slideConfigImageTendencia">
-          <div ngxSlickItem *ngFor="let slide of slides1" class="slide">
-            <div style="padding: 5px;" class="pelicula">
-              <img id="{{slide.id}}" style="height: 470px; width: 302px;" src="{{ slide.img }}" alt="">
+        <ngx-slick-carousel class="carousel" #tendencia_slick="slick-carousel" [config]="slideConfigImageTendencia">
+          <div  ngxSlickItem *ngFor="let slide of Img_En_tendencia" class="slide">
+            <div  style="padding: 5px;" (mouseover)="cambiarColorBotonv2(slide.id+'butoon',slide.id+'')" (mouseout)="restaurarColorBotonV2(slide.id+'butoon',slide.id+'')"  class="position-relative text-center">
+              <div style="width:92%; position:absolute; top:370px; left: 11px;" class="">
+                <a style="font-size: 22px; width:100%" class="invisible btn btn-success" id="{{slide.id}}butoon" (click)="enviarNuevaVentana(slide.id+'')">Ver ahora  <i class="bi bi-play-circle"></i></a>
+              </div>
+              <img class="img-fluid" id="{{ slide.id }}" style="height: 420px; width: 100%;" src="{{ slide.imagenPrincipal }}" alt="">
             </div>
           </div> 
         </ngx-slick-carousel>
       </div>
       <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
-        <button (click)="prev()" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
+        <button (click)="prev(3)" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
           <i class="bi bi-chevron-left"></i>
         </button>
       </div>
       <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
-        <button (click)="next(2)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
+        <button (click)="next(3)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
           <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
         </button>
       </div>
@@ -91,84 +90,61 @@
   </div>
   <div style="position: relative; margin-top:20px; color: white">
     <div style="position: relative; left:50px; display: inline-block;">
-      <h1>Grandes exitos de EcuaFilms</h1>
+      <h1>Romance</h1>
     </div>
-  <div style="width: 100%;">
-    <div class="position-relative">
-      <div>
-        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigImage">
-          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-            <div style="padding: 5px;" class="pelicula">
-              <img id="{{slide.Id}}" style="height: 300px; width: 200px;" src="{{ slide.imagenPrincipal }}" alt="">
-            </div>
-          </div> 
-        </ngx-slick-carousel>
-      </div>
-      <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
-        <button (click)="prev()" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-      </div>
-      <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
-        <button (click)="next(1)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
-          <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
-        </button>
+    <div style="width: 100%;">
+      <div class="position-relative">
+        <div>
+          <ngx-slick-carousel class="carousel" #galadornado_slick="slick-carousel" [config]="slideConfigImage">
+            <div  ngxSlickItem *ngFor="let slide of Img_Titulo_Galardonados" class="slide">
+              <div  style="padding: 5px;" (mouseover)="cambiarColorBotonv2(slide.id+'butoon',slide.id+'')" (mouseout)="restaurarColorBotonV2(slide.id+'butoon',slide.id+'')"  class="position-relative text-center">
+                <div style="width:88%; position:absolute; top:250px; left: 11px;" class="">
+                  <a style="font-size: 22px; width:100%" class="invisible btn btn-success" id="{{slide.id}}butoon" (click)="enviarNuevaVentana(slide.id+'')">Ver ahora  <i class="bi bi-play-circle"></i></a>
+                </div>
+                <img class="img-fluid" id="{{ slide.id }}" style="height: 300px; width: 100%;" src="{{ slide.imagenPrincipal }}" alt="">
+              </div>
+            </div> 
+          </ngx-slick-carousel>
+        </div>
+        <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
+          <button (click)="prev(4)" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+        </div>
+        <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
+          <button (click)="next(4)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
+            <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div> 
-
   <div style="position: relative; margin-top:20px; color: white">
     <div style="position: relative; left:50px; display: inline-block;">
-      <h1>Lo mejor del Anime</h1>
+      <h1>Super Heroes</h1>
     </div>
-  <div style="width: 100%;">
-    <div class="position-relative">
-      <div>
-        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigImage3">
-          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-            <div style="padding: 5px;" class="pelicula">
-              <img id="{{slide.Id}}" style="height: 250px; width: 400px;" src="{{ slide.imagenPrincipal }}" alt="">
-            </div>
-          </div> 
-        </ngx-slick-carousel>
-      </div>
-      <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
-        <button (click)="prev()" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-      </div>
-      <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
-        <button (click)="next(1)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
-          <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div style="position: relative; margin-top:20px; color: white">
-    <div style="position: relative; left:50px; display: inline-block;">
-      <h1>Estrenos que se convertiran en favoritos</h1>
-    </div>
-  <div style="width: 100%;">
-    <div class="position-relative">
-        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigImage4">
-          <div ngxSlickItem *ngFor="let slide of slides5" class="slide">
-            <div class="text-center">
-                  <div class="text-center pelicula" style="padding: 5px;" >
-                    <img id="{{slide.id}}" class="img-responsive" style="width: 100%; height:275px; opacity: 0.85;" src="{{ slide.img }}" alt="">
-                  </div>
-            </div>
-          </div> 
-        </ngx-slick-carousel>
-      <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
-        <button (click)="prev()" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(255, 255, 255); position: relative; border:none; background-color: transparent;">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-      </div>
-      <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
-        <button (click)="next(1)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(255, 255, 255); position: relative; z-index: 5; border:none; background-color: transparent;">
-          <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
-        </button>
+    <div style="width: 100%;">
+      <div class="position-relative">
+        <div>
+          <ngx-slick-carousel class="carousel" #anime_slick="slick-carousel" [config]="slideConfigImage">
+            <div  ngxSlickItem *ngFor="let slide of Img_Lo_mejor_del_Anime" class="slide">
+              <div  style="padding: 5px;" (mouseover)="cambiarColorBotonv2(slide.id+'butoon',slide.id+'')" (mouseout)="restaurarColorBotonV2(slide.id+'butoon',slide.id+'')"  class="position-relative text-center">
+                <div style="width:88%; position:absolute; top:250px; left: 11px;" class="">
+                  <a style="font-size: 22px; width:100%" class="invisible btn btn-success" id="{{slide.id}}butoon" (click)="enviarNuevaVentana(slide.id+'')">Ver ahora  <i class="bi bi-play-circle"></i></a>
+                </div>
+                <img class="img-fluid" id="{{ slide.id }}" style="height: 300px; width: 100%;" src="{{ slide.imagenPrincipal }}" alt="">
+              </div>
+            </div> 
+          </ngx-slick-carousel>
+        </div>
+        <div class="position-absolute top-0 start-0" style="height: 100%; padding: 5px; padding-left: 0px;">
+          <button (click)="prev(5)" id="botonAtras" (mouseenter)="cambiarColorBoton('botonAtras')" (mouseleave)="restaurarColorBoton('botonAtras')" style="font-size: 30px; height: 100%; padding-left: 10px; z-index: 5; color: rgb(202, 199, 199); position: relative; background: linear-gradient( to left, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.95)); border:none">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+        </div>
+        <div class="position-absolute top-0 end-0" style="height: 100%; padding: 5px; padding-right:0px; ">
+          <button (click)="next(5)" id="bontonSiguiente" (mouseenter)="cambiarColorBoton('bontonSiguiente')" (mouseleave)="restaurarColorBoton('bontonSiguiente')" style="height: 100%;  color: rgb(202, 199, 199); position: relative; z-index: 5;  background: linear-gradient( to left, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65), rgba(0, 0, 0,0.45)); border:none">
+            <i style="font-size: 30px;" class="bi bi-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</div>

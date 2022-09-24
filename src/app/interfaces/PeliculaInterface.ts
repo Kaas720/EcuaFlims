@@ -1,9 +1,12 @@
 
 export interface PeliculaInterface {
-    Id : number;
+    id : number;
     nombrePelicula : string;
     imagenPrincipal : string;
     imagenSegundaria  : string;
     imagenTercera  : string;
+    imagenCuarta : string;
+    limkPelicula  : string;
+    Calificacion : number;
     idCategoria : number;
 }

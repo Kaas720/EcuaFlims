@@ -1,74 +1,69 @@
-<nav class="navbar fixed-top" style="background-color: rgba(0, 0, 15,0.1)!important;">
-  <div class="container-fluid">
-    <button style="background-color:transparent; border:none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-      <i style="color: white; font-size:32px;" class="bi bi-list"></i>
-    </button>
-    <div class="text-center" style="width: 100%; position: absolute; z-index: -1;">
-      <img class="img-fluid img" src="assets/4Logo.png" alt="Placeholder" width="150px" />
-    </div>
-    <div class="text-center">
-      <div style="position: relative; top:7px">
-        <h1 style="background-color: transparent; border:none;color:white; font-size: 36px;">
-          <i class="bi bi-person-circle"></i>
-        </h1>
+<div>
+  <div class="navbar fixed-top" style="background-color: rgba(0, 0, 15,0.1)!important;">
+    <div class="container-fluid">
+      <button style="background-color:transparent; border:none; z-index: 10;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <i style="color: white; font-size:32px;" class="bi bi-list"></i>
+      </button>
+      <div class="text-center" style="width: 100%; position: absolute;">
+        <img (click)="dirigirseaHome()" class="img-fluid img" src="assets/4Logo.png" alt="Placeholder" width="150px" />
       </div>
-    </div>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-      <div style="width: 100%; height: 100%; background-color: rgb(15, 15, 15); padding: 30px;">
-        <div class="container" style="padding: 5px; overflow-y: auto;"> 
-          <div style="padding-bottom: 20px;">
-            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" style="color:rgba(255, 255, 255, 0.7); background-color: transparent; border:none; font-size: 35px;"><i class="bi bi-x"></i></button>
-          </div>
-          <div>
-            <form>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Buscar pelicula">
-                <button class="btn btn-secondary btn-outline-dark" type="button" style="color: white;border: none">Buscar</button>
-              </div>
-            </form>
-          </div>
-          <div (mouseenter)="eventoParacambiarTamanoLetrayColor('categoria-inicio')" (mouseleave)="restaurarTamanoLetrayColor('categoria-inicio')" style="width: 100%; font-size: 21px; padding-top: 28px; text-align: left;">
-            <a id="categoria-inicio"  href="" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">
-              Inicio
-            </a>
-          </div>
-          <div (mouseenter)="eventoParacambiarTamanoLetrayColor('categoria-Peliculas')" (mouseleave)="restaurarTamanoLetrayColor('categoria-Peliculas')" style="width: 100%;  font-size: 21px; padding-top: 28px; text-align: left;">
-            <a id="categoria-Peliculas" href="" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">
-              Peliculas
-            </a>
-          </div>
-          <div (mouseenter)="eventoParacambiarTamanoLetrayColor('categoria-recien')" (mouseleave)="restaurarTamanoLetrayColor('categoria-recien')" style="width: 100%;  font-size: 21px; padding-top: 28px; text-align: left;">
-              <a id="categoria-recien" href="" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">
-                Recien Añadidos
+      <div class="text-center">
+        <div style="position: relative; top:2px">
+          <button (click)="abrirDivOculto()" style="background-color: transparent; border:none;color:white; font-size: 36px;">
+            <i class="bi bi-person-circle"></i>
+          </button>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div style="width: 100%; height: 100%; background-color: rgb(15, 15, 15); padding: 30px;">
+          <div class="container" style="padding: 5px; overflow-y: auto;"> 
+            <div style="padding-bottom: 20px;">
+              <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" style="color:rgba(255, 255, 255, 0.7); background-color: transparent; border:none; font-size: 35px;"><i class="bi bi-x"></i></button>
+            </div>
+            <div>
+              <form [formGroup]="PeliculasBuscar" (ngSubmit)="onSubmit()">
+                <div class="input-group">
+                  <input formControlName="pelicula" type="text" class="form-control" placeholder="Buscar pelicula">
+                  <button [disabled] = "!PeliculasBuscar.valid" data-bs-dismiss="offcanvas" class="btn btn-secondary btn-outline-dark" type="submit" style="color: white;border: none">Buscar</button>
+                </div>
+              </form>
+            </div>
+            <div (mouseenter)="eventoParacambiarTamanoLetrayColor('categoria-inicio')" (mouseleave)="restaurarTamanoLetrayColor('categoria-inicio')" style="width: 100%; font-size: 21px; padding-top: 28px; text-align: left;">
+              <a id="categoria-inicio" class="mouseIcon" data-bs-dismiss="offcanvas" (click)="dirigirseHome()" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">
+                Inicio
               </a>
-          </div>
-          <div (mouseenter)="eventoParacambiarTamanoLetrayColor('categoria-tendencia')" (mouseleave)="restaurarTamanoLetrayColor('categoria-tendencia')" style="width: 100%; font-size: 21px; padding-top: 28px; text-align: left;">
-            <a id="categoria-tendencia" href="" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">
-              En tendencia
-            </a>
-          </div>
-          <div (mouseenter)="eventoParacambiarTamanoLetrayColor('categoria-Proximamente')" (mouseleave)="restaurarTamanoLetrayColor('categoria-Proximamente')" style="width: 100%; font-size: 21px; padding-top: 28px; text-align: left;">
-            <a id="categoria-Proximamente" href="" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">
-              Proximamente
-            </a>
-          </div>
-          <div (mouseenter)="eventoParacambiarTamanoLetrayColor('categoria-Galardonados')" (mouseleave)="restaurarTamanoLetrayColor('categoria-Galardonados')" style="width: 100%; font-size: 21px; padding-top: 28px; text-align: left;">
-            <a id="categoria-Galardonados" href="" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">
-              Titulo Galardonados
-            </a>
-          </div>
-          <div style="width: 100%; padding-top: 28px; text-align: left;">
-            <button (click)="AbrirCaterorigias()" style="background-color: transparent; border: none;color: rgba(255, 255, 255, 0.7); font-size: 21px">Categorias <i id="botonFlecha" class="bi bi-caret-down-fill"></i></button>
-          </div>
-          <div  class="d-none" id="divCategoriasAlmacenadas" style="height: 200px; border-top: 1px solid rgba(255, 255, 255, 0.7); margin-top: 5px;">
-            <div *ngFor="let categrias of categoria" style="font-size: 21px; padding-top: 15px; text-align: left;">
-              <li style="list-style: none; padding-left: 5px;">
-                <a style="color: rgba(255, 255, 255, 0.7); text-decoration:none" href="">{{categrias.nombreCategoria}}</a>
-              </li>
+            </div>
+            <div (mouseenter)="eventoParacambiarTamanoLetrayColor('categoria-Peliculas')" (mouseleave)="restaurarTamanoLetrayColor('categoria-Peliculas')" style="width: 100%;  font-size: 21px; padding-top: 28px; text-align: left;">
+              <a class="mouseIcon" data-bs-dismiss="offcanvas" id="categoria-Peliculas" (click)="dirigirseAPeliculas('Peliculas')" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">
+                Peliculas
+              </a>
+            </div>
+            <div style="width: 100%; padding-top: 28px; text-align: left;">
+              <button (click)="AbrirCaterorigias()" style="background-color: transparent; border: none;color: rgba(255, 255, 255, 0.7); font-size: 21px">Categorias <i id="botonFlecha" class="bi bi-caret-down-fill"></i></button>
+            </div>
+            <div  class="d-none" id="divCategoriasAlmacenadas" style="height: 200px; border-top: 1px solid rgba(255, 255, 255, 0.7); margin-top: 5px;">
+              <div *ngFor="let categrias of categoria" style="font-size: 21px; padding-top: 15px; text-align: left;">
+                <div (mouseenter)="eventoParacambiarTamanoLetrayColor(categrias.nombreCategoria)" (mouseleave)="restaurarTamanoLetrayColor(categrias.nombreCategoria)" style="list-style: none; padding-left: 5px;">
+                  <a class="mouseIcon" data-bs-dismiss="offcanvas" (click)="dirigirseAPeliculas(categrias.idCategoria+'')" id="{{categrias.nombreCategoria}}" style="color: rgba(255, 255, 255, 0.7); text-decoration:none">{{categrias.nombreCategoria}}</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="position-relative" style="top:25px">
+      <div class="position-absolute top-0 end-0"  style="width: max-content; z-index: 3;" >
+        <div id="DivOculto" style="background-color: rgba(0, 0, 0,0.95); padding: 20px; border-radius: 10px;" class="d-none">
+          <h4 style="text-align: center; color:white">{{correoUsuario}}</h4>
+          <button (click)="dirigirseFormadePago()" class="btn btn-dark btn-outline-secondary;" style="text-align: center; width: 100%; color: rgba(255, 255, 255, 0.95)">Forma de Pago</button>
+          <br><br>
+          <button (click)="CerrarSeccion()" class="btn btn-dark btn-outline-secondary;" style="text-align: center; width: 100%; color: rgba(255, 255, 255, 0.95)">Cerrar Sesión</button>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
+ 
+</div>
+<router-outlet></router-outlet>
+<app-footer-cliente></app-footer-cliente>

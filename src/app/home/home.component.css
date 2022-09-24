@@ -3,7 +3,11 @@
 }
 
 .pelicula img:hover{
-    border: 3px solid rgb(115,61,235);
+    border: 3px solid rgb(98, 34, 236);
+ 
+}
+.pelicula button:hover{
+    color: white;
 }
 
 .carousel-caption{
@@ -61,6 +65,29 @@ h2 , p{
 	left: 5px;
 	display: inline;
 }
-body{
-    
+#DivPrincipal{
+    height: 90vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center 0px;
+    background-size: 100% 100%;
+}
+#divSegundario{
+    z-index:1; 
+    position: relative; 
+    top:-25px; left: 175px; 
+    width:min-content
+}
+@media (max-width: 950px){
+    #DivPrincipal{
+        background-size: cover;
+        background-position: center center;
+    } 
+    #divSegundario{
+        z-index:1; 
+        position: relative; 
+        top:120px; 
+        left: 25%; 
+        width:min-content
+    }
 }
